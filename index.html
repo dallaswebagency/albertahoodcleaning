@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alberta Hood Cleaning | Kitchen Exhaust Cleaning in Edmonton &amp; Across Alberta</title>
+<meta name="description" content="Kitchen exhaust system cleaning and degreasing from the roof-top fan to the kitchen floor. Serving restaurants, hospitals, cafeterias, grocery stores and large institutions across Alberta.">
+<meta name="theme-color" content="#0a0e2e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0e2e;
+  --indigo:#1d1b6b;
+  --sky:#2b9ad6;
+  --spray:#4fd0f5;
+  --steel:#c7cdd5;
+  --steel-2:#e3e7ec;
+  --steel-dark:#6c7480;
+  --paper:#f2f4f7;
+  --white:#ffffff;
+  --text:#1b2033;
+  --muted:#525a6b;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --wrap:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);color:var(--text);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;letter-spacing:.005em;margin:0;color:var(--ink)}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+:focus-visible{outline:3px solid var(--spray);outline-offset:3px;border-radius:4px}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:16px;text-decoration:none;padding:15px 24px;border-radius:3px;border:2px solid transparent;transition:background .2s,color .2s,border-color .2s;cursor:pointer}
+.btn-sky{background:var(--sky);color:#fff}
+.btn-sky:hover{background:var(--indigo)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:var(--indigo)}
+.btn-line{border-color:var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* utility bar */
+.util{background:var(--ink);color:#cfd6e4;font-size:14px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:42px;flex-wrap:wrap}
+.util a{text-decoration:none;color:#cfd6e4}
+.util a:hover{color:#fff}
+.util-left,.util-right{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.util .hours{display:flex;align-items:center;gap:8px}
+.util .dot{width:7px;height:7px;border-radius:50%;background:var(--spray);box-shadow:0 0 0 4px rgba(79,208,245,.2)}
+.social{display:flex;gap:6px}
+.social a{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.08)}
+.social a:hover{background:var(--sky)}
+.social svg{width:15px;height:15px;fill:currentColor}
+
+/* header */
+header.site{background:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid var(--steel-2)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:104px}
+.brand img{height:88px;width:auto}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:4px}
+nav.main li{position:relative}
+nav.main > ul > li > a,nav.main > ul > li > button{font:600 16px var(--body);color:var(--ink);text-decoration:none;background:none;border:0;padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:6px;border-radius:3px}
+nav.main > ul > li > a:hover,nav.main > ul > li > button:hover{color:var(--sky)}
+nav.main button svg{width:11px;height:11px;transition:transform .2s}
+.drop{position:absolute;top:100%;left:0;min-width:300px;background:#fff;border:1px solid var(--steel-2);border-top:3px solid var(--sky);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .18s;box-shadow:0 18px 40px -18px rgba(10,14,46,.35)}
+nav.main li:hover .drop,nav.main li:focus-within .drop{opacity:1;visibility:visible;transform:none}
+nav.main li:hover button svg{transform:rotate(180deg)}
+.drop a{display:block;padding:10px 12px;text-decoration:none;font-size:15px;color:var(--text);border-radius:2px}
+.drop a:hover{background:var(--paper);color:var(--indigo)}
+.head-cta{display:flex;align-items:center;gap:14px}
+.head-call{display:flex;flex-direction:column;text-decoration:none;line-height:1.15;text-align:right}
+.head-call small{font-size:13px;color:var(--muted)}
+.head-call strong{font-family:var(--display);font-size:26px;font-weight:800;color:var(--indigo);letter-spacing:.02em}
+.menu-btn{display:none;background:var(--ink);color:#fff;border:0;width:46px;height:46px;border-radius:3px;cursor:pointer}
+.menu-btn svg{width:22px;height:22px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid var(--steel-2)}
+.hero::before{content:"";position:absolute;right:0;top:0;bottom:0;width:34%;background:var(--paper)}
+.hero .wrap{position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:end;padding-top:64px;padding-bottom:72px}
+.hero-copy{padding-bottom:28px}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:var(--indigo);font-size:16px;margin-bottom:22px}
+.hero-kicker svg{width:22px;height:22px;color:var(--sky)}
+.hero h1{font-size:clamp(54px,8.2vw,118px);text-transform:uppercase;font-weight:900;line-height:.86}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln span{display:block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 .ln:nth-child(2) span{animation-delay:.12s}
+.hero h1 .ln:nth-child(3) span{animation-delay:.24s;color:var(--indigo)}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.hero-lead{font-size:19px;color:var(--muted);max-width:540px;margin:28px 0 34px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-visual{position:relative;height:600px}
+.hood-frame{position:absolute;inset:0 0 0 0;clip-path:polygon(16% 0,84% 0,100% 20%,100% 100%,0 100%,0 20%);background:var(--ink)}
+.hood-frame img{width:100%;height:100%;object-fit:cover;opacity:.92}
+.hood-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,46,0) 50%,rgba(10,14,46,.7))}
+.hood-trim{position:absolute;left:0;right:0;top:20%;height:10px;background:repeating-linear-gradient(90deg,var(--steel) 0 22px,var(--steel-dark) 22px 26px);z-index:2;opacity:.9}
+.hero-spray{position:absolute;left:-90px;top:30%;width:300px;z-index:3;pointer-events:none}
+.drop-p{animation:spray 1.4s linear infinite;transform-box:fill-box}
+@keyframes spray{0%{opacity:0;transform:translate(0,0)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy))}}
+.sticker{position:absolute;right:-26px;top:120px;width:150px;height:150px;z-index:4;text-decoration:none}
+.sticker .ring{width:100%;height:100%;animation:spin 18s linear infinite}
+.sticker .core{position:absolute;inset:24px;border-radius:50%;background:var(--sky);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:900;line-height:.85;box-shadow:0 12px 30px -10px rgba(29,27,107,.6)}
+.sticker .core b{font-size:42px;display:block}
+.sticker .core i{font-style:normal;font-size:17px;letter-spacing:.03em}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-caption{position:absolute;left:24px;right:24px;bottom:22px;z-index:3;color:#fff;font-size:15px;display:flex;justify-content:space-between;gap:12px}
+.hero-caption strong{font-family:var(--display);font-size:24px;font-weight:800;display:block;letter-spacing:.02em}
+
+/* credentials */
+.creds{background:var(--paper);padding:56px 0 64px}
+.creds-inner{display:grid;grid-template-columns:auto 1fr;gap:0;background:#fff;border:1px solid var(--steel-2)}
+.badges{display:flex;align-items:center;gap:26px;padding:22px 32px;border-right:1px solid var(--steel-2)}
+.badges img{height:78px;width:auto}
+.badges img.nfpa{height:86px}
+.serve{display:flex;align-items:center;overflow:hidden;position:relative}
+.serve-label{flex:none;padding:0 26px;font-weight:600;color:var(--indigo);font-size:15px;line-height:1.3;max-width:170px}
+.marquee{flex:1;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:marq 26s linear infinite;padding:0 22px}
+.marquee-track span{font-family:var(--display);font-size:40px;font-weight:800;color:var(--ink);text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:44px}
+.marquee-track span::after{content:"";width:12px;height:12px;background:var(--sky);transform:rotate(45deg)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* happiness */
+.happy{padding:40px 0 110px}
+.happy .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:center}
+.happy-media{position:relative}
+.happy-media .main{border-radius:3px;overflow:hidden;aspect-ratio:4/5}
+.happy-media .main img{width:100%;height:100%;object-fit:cover}
+.happy-media .gauge{position:absolute;right:-34px;bottom:44px;background:var(--ink);color:#fff;padding:20px 22px;width:220px;border-left:5px solid var(--spray)}
+.happy-media .gauge strong{font-family:var(--display);font-size:28px;font-weight:800;line-height:1;display:block;margin-bottom:6px}
+.happy-media .gauge span{font-size:14px;color:#bcc5d8;line-height:1.4;display:block}
+.happy h2{font-size:clamp(46px,6vw,84px);text-transform:uppercase;margin-bottom:26px}
+.happy .lede{font-size:21px;line-height:1.55;color:var(--ink);font-weight:500;margin-bottom:20px}
+.happy p+p{margin-top:16px}
+.happy .body{color:var(--muted)}
+.where{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 34px;padding:0;list-style:none}
+.where li{border:1px solid var(--steel);padding:8px 14px;font-size:15px;font-weight:500;background:#fff}
+
+/* services */
+.services{background:var(--ink);color:#dfe5f0;padding:110px 0}
+.services-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
+.services h2{color:#fff;font-size:clamp(48px,6.4vw,92px);text-transform:uppercase}
+.services-head p{max-width:420px;color:#aeb8cc}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.svc-list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.14)}
+.svc-list li{border-bottom:1px solid rgba(255,255,255,.14)}
+.svc-list a{display:grid;grid-template-columns:52px 1fr 34px;align-items:center;gap:16px;padding:22px 6px;text-decoration:none;color:#fff;transition:padding .25s,background .25s}
+.svc-list a .ic{width:44px;height:44px;border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;border-radius:50%;color:var(--spray);transition:background .25s,color .25s}
+.svc-list a .ic svg{width:22px;height:22px}
+.svc-list a h3{color:#fff;font-size:30px;font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+.svc-list a .go{width:34px;height:34px;opacity:.35;transition:opacity .25s,transform .25s}
+.svc-list a:hover,.svc-list a:focus-visible,.svc-list li.on a{padding-left:16px;background:rgba(255,255,255,.04)}
+.svc-list li.on .ic{background:var(--sky);color:#fff;border-color:var(--sky)}
+.svc-list li.on .go{opacity:1;transform:translateX(4px)}
+.svc-stage{position:sticky;top:120px}
+.svc-photo{position:relative;aspect-ratio:4/3;overflow:hidden;background:#141a45}
+.svc-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .45s,transform .9s}
+.svc-photo img.on{opacity:1;transform:none}
+.svc-photo .tag{position:absolute;left:0;bottom:0;background:var(--sky);color:#fff;font-family:var(--display);font-weight:800;font-size:24px;padding:12px 20px;text-transform:uppercase;z-index:2}
+.svc-note{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:22px;padding:20px 22px;border:1px solid rgba(255,255,255,.14)}
+.svc-note p{color:#cfd6e4;font-size:16px}
+
+/* process */
+.process{padding:110px 0 120px;background:#fff}
+.process-head{max-width:760px;margin-bottom:60px}
+.process h2{font-size:clamp(48px,6.4vw,92px);text-transform:uppercase;margin-bottom:22px}
+.process-head p{color:var(--muted);font-size:18px}
+.proc-grid{display:grid;grid-template-columns:440px 1fr;gap:80px;align-items:start}
+.section-fig{margin:0;position:sticky;top:116px;background:var(--paper);border:1px solid var(--steel-2);padding:22px}
+.section-fig svg{width:100%;height:auto;display:block}
+.fig-legend{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:14px;color:var(--muted)}
+.fig-legend strong{font-family:var(--display);font-size:24px;color:var(--indigo);font-weight:800;text-transform:uppercase}
+/* zones */
+.z{transition:fill .35s,stroke .35s,opacity .35s}
+.zfill{fill:#d5dae1}
+.zline{stroke:#8d95a1}
+[data-zone="roof"] .z-roof .zfill,[data-zone="duct"] .z-duct .zfill,[data-zone="hood"] .z-hood .zfill,[data-zone="kitchen"] .z-kitchen .zfill,[data-zone="signoff"] .z-sign .zfill{fill:var(--sky)}
+[data-zone="roof"] .z-roof .zline,[data-zone="duct"] .z-duct .zline,[data-zone="hood"] .z-hood .zline,[data-zone="kitchen"] .z-kitchen .zline{stroke:var(--indigo)}
+.fan-blades{transform-origin:190px 84px;transform-box:view-box}
+[data-zone="roof"] .fan-blades{animation:spin 1.2s linear infinite}
+.flow-drop{opacity:0}
+[data-zone="duct"] .flow-drop{animation:fall 1.6s linear infinite}
+@keyframes fall{0%{opacity:0;transform:translateY(-10px)}20%{opacity:1}100%{opacity:0;transform:translateY(190px)}}
+.sign-badge{opacity:.25;transition:opacity .35s,transform .35s;transform-origin:268px 372px;transform-box:view-box}
+[data-zone="signoff"] .sign-badge{opacity:1;transform:scale(1.15)}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:70px 1fr auto;gap:18px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--steel-2);transition:opacity .3s;opacity:.42}
+.steps li.on{opacity:1}
+.steps li .n{font-family:var(--display);font-weight:900;font-size:44px;line-height:1;color:var(--steel)}
+.steps li.on .n{color:var(--sky)}
+.steps li p{font-size:19px;color:var(--ink);font-weight:500;line-height:1.45}
+.steps li .zl{font-size:13px;font-weight:600;color:var(--indigo);border:1px solid var(--steel);padding:3px 10px;border-radius:20px;white-space:nowrap}
+.zone-break{padding:34px 0 8px;font-family:var(--display);font-weight:800;font-size:22px;color:var(--steel-dark);text-transform:uppercase;letter-spacing:.03em;border-bottom:2px solid var(--ink)}
+
+/* great people */
+.people{position:relative;background:var(--indigo);color:#fff;overflow:hidden}
+.people .wrap{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.people-copy{padding:96px 64px 96px 0;position:relative;z-index:2}
+.people h2{color:#fff;font-size:clamp(48px,6vw,88px);text-transform:uppercase;margin-bottom:28px}
+.people h3{color:var(--spray);font-family:var(--body);font-weight:600;font-size:22px;line-height:1.35;margin-bottom:14px;text-transform:none}
+.people p{color:#d3d9ec;font-size:18px;max-width:520px}
+.people .btn{margin-top:32px}
+.people-media{position:relative;margin-right:calc((100vw - min(100vw,var(--wrap)))/-2 - 28px)}
+.people-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.people-media::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--indigo),rgba(29,27,107,0) 40%);z-index:1}
+.vents{position:absolute;left:0;right:0;bottom:0;height:16px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.14) 0 30px,transparent 30px 38px);z-index:3}
+
+/* service area */
+.area{padding:110px 0}
+.area .wrap{display:grid;grid-template-columns:1fr 380px;gap:70px;align-items:center}
+.area h2{font-size:clamp(48px,6.4vw,92px);text-transform:uppercase;margin-bottom:20px}
+.area-intro{color:var(--muted);font-size:18px;max-width:560px;margin-bottom:34px}
+.towns{columns:3;column-gap:28px;list-style:none;padding:0;margin:0}
+.towns li{break-inside:avoid}
+.towns a{display:flex;align-items:center;gap:10px;padding:7px 0;text-decoration:none;font-weight:500;border-bottom:1px dashed var(--steel)}
+.towns a::before{content:"";width:8px;height:8px;border-radius:50%;border:2px solid var(--sky);flex:none;transition:background .2s}
+.towns a:hover,.towns a.on{color:var(--indigo)}
+.towns a:hover::before,.towns a.on::before{background:var(--sky)}
+.map{position:relative}
+.map svg{width:100%;height:auto;overflow:visible}
+.map .prov{fill:#fff;stroke:var(--ink);stroke-width:2}
+.map .grid line{stroke:var(--steel-2);stroke-width:1}
+.map .pt{fill:var(--sky);stroke:#fff;stroke-width:1.5;transition:r .2s,fill .2s}
+.map .pt.on{fill:var(--indigo)}
+.map .hq{fill:var(--indigo)}
+.map .pulse{fill:none;stroke:var(--sky);stroke-width:2;transform-origin:191.4px 322.5px;transform-box:view-box;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{from{transform:scale(.4);opacity:1}to{transform:scale(2.6);opacity:0}}
+.map text{font-family:var(--body);font-size:11.5px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:#f2f4f7;stroke-width:4px;stroke-linejoin:round}
+.map .hqlabel{font-family:var(--display);font-size:18px;font-weight:800;fill:var(--indigo)}
+.map-tip{position:absolute;left:0;top:0;background:var(--ink);color:#fff;font-size:13px;font-weight:600;padding:5px 9px;pointer-events:none;opacity:0;transform:translate(-50%,-140%);transition:opacity .15s;white-space:nowrap}
+
+/* cta */
+.cta{background:var(--paper);padding:0 0 110px}
+.cta-box{display:grid;grid-template-columns:1.2fr .8fr;background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.cta-copy{padding:70px 64px}
+.cta h2{color:#fff;font-size:clamp(44px,5.6vw,80px);text-transform:uppercase;margin-bottom:20px}
+.cta p{color:#bfc8da;font-size:18px;max-width:520px;margin-bottom:32px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.cta .btn-line{border-color:#fff;color:#fff}
+.cta .btn-line:hover{background:#fff;color:var(--ink)}
+.cta-side{background:var(--sky);padding:60px 48px;display:flex;flex-direction:column;justify-content:center;gap:24px;position:relative}
+.cta-side::before{content:"";position:absolute;left:-1px;top:0;bottom:0;width:40px;background:var(--ink);clip-path:polygon(0 0,100% 0,0 100%)}
+.cta-line{display:flex;flex-direction:column;text-decoration:none;color:#fff}
+.cta-line small{font-size:14px;opacity:.85}
+.cta-line strong{font-family:var(--display);font-size:38px;font-weight:800;line-height:1.05;letter-spacing:.02em}
+.cta-line.mail strong{font-family:var(--body);font-size:19px;font-weight:600;letter-spacing:0;word-break:break-all}
+
+/* footer */
+footer{background:var(--ink);color:#b7c0d3;padding:80px 0 0;font-size:15px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1.3fr 1fr;gap:48px;padding-bottom:56px}
+.foot-logo{background:#fff;display:inline-block;padding:14px 18px;border-radius:3px;margin-bottom:22px}
+.foot-logo img{height:84px;width:auto}
+footer h4{font-family:var(--display);font-weight:800;font-size:22px;color:#fff;text-transform:uppercase;letter-spacing:.03em;margin:0 0 18px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:10px}
+footer a{text-decoration:none;color:#b7c0d3}
+footer a:hover{color:#fff}
+.foot-contact li{display:flex;gap:10px;align-items:flex-start}
+.foot-contact svg{width:17px;height:17px;flex:none;margin-top:4px;color:var(--spray)}
+.foot-badges{display:flex;gap:12px;margin-top:20px;align-items:center}
+.foot-badges span{background:#fff;padding:6px;border-radius:3px;display:grid;place-items:center}
+.foot-badges img{height:46px;width:auto}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding:22px 0}
+.foot-bottom .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot-bottom a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+/* mobile bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:1100px){
+  nav.main,.head-call{display:none}
+  .menu-btn{display:grid;place-items:center}
+  nav.main.open{display:block;position:absolute;top:104px;left:0;right:0;background:#fff;border-bottom:1px solid var(--steel-2);padding:12px 20px 20px}
+  nav.main.open ul{flex-direction:column}
+  nav.main.open .drop{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 0 14px;min-width:0}
+  .hero .wrap,.happy .wrap,.svc-grid,.proc-grid,.people .wrap,.area .wrap,.cta-box{grid-template-columns:1fr}
+  .hero-visual{height:480px}
+  .hero-spray{left:-20px;width:220px}
+  .sticker{right:10px}
+  .creds-inner{grid-template-columns:1fr}
+  .badges{border-right:0;border-bottom:1px solid var(--steel-2);justify-content:center}
+  .serve{padding:18px 0}
+  .happy-media .gauge{right:12px}
+  .svc-stage{position:relative;top:0;order:-1}
+  .section-fig{margin:0;position:sticky;top:92px;z-index:5;padding:12px;max-width:none}
+  .section-fig svg{max-height:34vh}
+  .people-media{min-height:340px;margin:0 -28px}
+  .people-copy{padding:80px 0 60px}
+  .map{max-width:360px;margin:0 auto}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .cta-side::before{display:none}
+  .hero::before{display:none}
+  .svc-note{flex-wrap:wrap}
+}
+@media (max-width:680px){
+  body{font-size:16px;padding-bottom:64px}
+  .wrap{padding:0 20px}
+  .util-left a.rev,.util .social{display:none}
+  header.site .wrap{height:78px}
+  .brand img{height:58px}
+  nav.main.open{top:78px}
+  .head-cta .btn{display:none}
+  .hero .wrap{padding-top:40px;gap:30px}
+  .hero-visual{height:400px}
+  .sticker{width:118px;height:118px;top:70px}
+  .sticker .core{inset:19px}
+  .sticker .core b{font-size:32px}
+  .sticker .core i{font-size:14px}
+  .services-head{flex-direction:column;align-items:flex-start}
+  .svc-list a h3{font-size:24px}
+  .steps li{grid-template-columns:48px 1fr}
+  .steps li .zl{display:none}
+  .steps li .n{font-size:34px}
+  .steps li p{font-size:17px}
+  .towns{columns:2}
+  .cta-copy{padding:50px 26px}
+  .cta-side{padding:40px 26px}
+  .foot-grid{grid-template-columns:1fr}
+  .marquee-track span{font-size:30px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -6px 20px rgba(10,14,46,.2)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;height:60px;font-weight:600;text-decoration:none;color:#fff;background:var(--ink)}
+  .mbar a+a{background:var(--sky)}
+  .mbar svg{width:18px;height:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 12 12"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 4l4 4 4-4"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.5-1 1-1h2V2h-3c-3 0-4 2-4 4.3V8H8v3.5h2V22h4V11.5h2.7L17 8z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm6-7.9a1.1 1.1 0 1 1-1.1-1.1A1.1 1.1 0 0 1 18 7.1zM21.9 8a5.4 5.4 0 0 0-1.5-3.9A5.4 5.4 0 0 0 16.5 2.6C15 2.5 9 2.5 7.5 2.6a5.4 5.4 0 0 0-3.9 1.5A5.4 5.4 0 0 0 2.1 8c-.1 1.5-.1 6.5 0 8a5.4 5.4 0 0 0 1.5 3.9 5.4 5.4 0 0 0 3.9 1.5c1.5.1 7.5.1 9 0a5.4 5.4 0 0 0 3.9-1.5 5.4 5.4 0 0 0 1.5-3.9c.1-1.5.1-6.5 0-8zm-2 9.6a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.2.4s-4.1.1-5.2-.4a3 3 0 0 1-1.7-1.7c-.5-1.2-.4-4-.4-5.6s-.1-4.4.4-5.6a3 3 0 0 1 1.7-1.7c1.2-.5 4-.4 5.2-.4s4.1-.1 5.2.4a3 3 0 0 1 1.7 1.7c.5 1.2.4 4 .4 5.6s.1 4.4-.4 5.6z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.2c-.2.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7z"/></symbol>
+</svg>
+
+<!-- Utility bar -->
+<div class="util">
+  <div class="wrap">
+    <div class="util-left">
+      <span class="hours"><i class="dot"></i>Mon to Sun, 9 am to 8 pm</span>
+      <a class="rev" href="https://www.google.com/search?q=alberta+hood+cleaning" target="_blank" rel="noopener">Write us a Google review</a>
+      <a href="https://www.albertahoodcleaning.ca/contact-us/">Contact us</a>
+    </div>
+    <div class="util-right">
+      <div class="social">
+        <a href="https://www.facebook.com/Albertahoodcleaning-107316601708932/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+        <a href="https://www.instagram.com/p/CaIkBGrv1X5/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+        <a href="https://wa.me/17807104484" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Alberta Hood Cleaning home"><img src="images/logo.png" alt="Alberta Hood Cleaning, pressure washing and so much more"></a>
+    <nav class="main" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><button type="button" aria-haspopup="true">About <svg><use href="#i-chev"/></svg></button>
+          <div class="drop">
+            <a href="https://www.albertahoodcleaning.ca/about-us-2/">About us</a>
+            <a href="https://www.albertahoodcleaning.ca/our-company-believes/">Our company believes</a>
+            <a href="https://www.albertahoodcleaning.ca/frequently-asked-question/">Frequently asked questions</a>
+          </div>
+        </li>
+        <li><button type="button" aria-haspopup="true">Services <svg><use href="#i-chev"/></svg></button>
+          <div class="drop">
+            <a href="https://www.albertahoodcleaning.ca/kitchen-exhaust-system-cleaning-degreasing/">Kitchen exhaust system cleaning &amp; degreasing</a>
+            <a href="https://www.albertahoodcleaning.ca/exhaust-fan-access-panel-installation/">Exhaust access panel installation</a>
+            <a href="https://www.albertahoodcleaning.ca/exhaust-fan-hinges-installation/">Exhaust fan hinges installation</a>
+            <a href="https://www.albertahoodcleaning.ca/roof-top-grease-containment/">Roof top grease containment</a>
+            <a href="https://www.albertahoodcleaning.ca/commercial-pressure-washing/">Commercial pressure washing</a>
+            <a href="https://www.albertahoodcleaning.ca/exhaust-fan-belt-replacements/">Exhaust belt replacements</a>
+            <a href="https://www.albertahoodcleaning.ca/commercial-kitchen-equipment-cleaning/">Commercial kitchen equipment cleaning</a>
+          </div>
+        </li>
+        <li><a href="https://www.albertahoodcleaning.ca/the-5-most-common-problems-found-in-kitchen-exhaust-systems/">Blog</a></li>
+        <li><a href="https://www.albertahoodcleaning.ca/contact-us/">Contact us</a></li>
+      </ul>
+    </nav>
+    <div class="head-cta">
+      <a class="head-call" href="tel:+17807102273"><small>Call us today</small><strong>780-710-2273</strong></a>
+      <a class="btn btn-sky" href="https://www.albertahoodcleaning.ca/contact-us/">Request quote</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="hero-kicker"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 4.9-4.9 1.4 1.4z"/></svg>Happiness guaranteed, licensed and insured</p>
+      <h1><span class="ln"><span>We go from</span></span><span class="ln"><span>top to</span></span><span class="ln"><span>bottom.</span></span></h1>
+      <p class="hero-lead">Kitchen exhaust system cleaning that begins on the roof-top where the fan unit is located and ends on the kitchen floor. Fewer fire hazards, a cleaner kitchen and a better working environment for your staff.</p>
+      <div class="hero-actions">
+        <a class="btn btn-ink" href="https://www.albertahoodcleaning.ca/contact-us/">Book now</a>
+        <a class="btn btn-line" href="tel:+17807102273"><svg><use href="#i-phone"/></svg>780-710-2273</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hood-frame"><img src="images/commercial-kitchen-hoods.jpg" alt="Clean stainless steel exhaust hoods above a commercial kitchen line"></div>
+      <div class="hood-trim" aria-hidden="true"></div>
+      <a class="sticker" href="https://www.albertahoodcleaning.ca/contact-us/" aria-label="New client, 10% off. Request a quote">
+        <svg class="ring" viewBox="0 0 150 150" aria-hidden="true"><defs><path id="circ" d="M75,75 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0"/></defs><circle cx="75" cy="75" r="74" fill="#fff"/><text font-family="Archivo,Arial" font-size="12.5" font-weight="700" fill="#1d1b6b" letter-spacing="1.5"><textPath href="#circ" textLength="384" lengthAdjust="spacing">NEW CLIENT · REQUEST QUOTE · NEW CLIENT · REQUEST QUOTE ·</textPath></text></svg>
+        <span class="core"><span><b>10%</b><i>off</i></span></span>
+      </a>
+      <svg class="hero-spray" viewBox="0 0 300 160" aria-hidden="true">
+        <g transform="rotate(-14 150 80)">
+          <rect x="10" y="78" width="150" height="7" rx="3" fill="#0a0e2e"/>
+          <rect x="60" y="74" width="40" height="15" rx="2" fill="#0a0e2e"/>
+          <rect x="160" y="75" width="12" height="13" rx="2" fill="#0a0e2e"/>
+          <g fill="#4fd0f5">
+            <circle class="drop-p" cx="176" cy="81" r="4" style="--dx:70px;--dy:-26px"/>
+            <circle class="drop-p" cx="176" cy="81" r="3" style="--dx:86px;--dy:-4px;animation-delay:.2s"/>
+            <circle class="drop-p" cx="176" cy="81" r="3.5" style="--dx:78px;--dy:20px;animation-delay:.45s"/>
+            <circle class="drop-p" cx="176" cy="81" r="2.5" style="--dx:100px;--dy:-14px;animation-delay:.7s"/>
+            <circle class="drop-p" cx="176" cy="81" r="3" style="--dx:96px;--dy:10px;animation-delay:.95s"/>
+            <circle class="drop-p" cx="176" cy="81" r="2" style="--dx:110px;--dy:-30px;animation-delay:1.15s"/>
+            <path class="drop-p" d="M176 81l30-8-2 6z" style="--dx:40px;--dy:-6px;animation-delay:.3s"/>
+          </g>
+        </g>
+      </svg>
+      <div class="hero-caption"><span><strong>Kitchen exhaust cleaning &amp; degreasing</strong>Edmonton and across Alberta</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Credentials -->
+<section class="creds" aria-label="Credentials and who we serve">
+  <div class="wrap">
+    <div class="creds-inner">
+      <div class="badges">
+        <img class="nfpa" src="images/badge-nfpa.png" alt="NFPA member">
+        <img src="images/badge-power-wash-academy.png" alt="Certified, Power Wash Academy">
+        <img src="images/badge-licensed-insured.png" alt="Licensed and insured">
+      </div>
+      <div class="serve">
+        <p class="serve-label">We service</p>
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee-track">
+            <span>Restaurants</span><span>Hospitals</span><span>Cafeterias</span><span>Grocery stores</span><span>Large institutions</span>
+            <span>Restaurants</span><span>Hospitals</span><span>Cafeterias</span><span>Grocery stores</span><span>Large institutions</span>
+          </div>
+        </div>
+        <p class="sr" style="position:absolute;left:-9999px">Restaurants, hospitals, cafeterias, grocery stores and large institutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Happiness guaranteed -->
+<section class="happy">
+  <div class="wrap">
+    <div class="happy-media rv">
+      <div class="main"><img src="images/kitchen-hood-line.jpg" alt="Stainless steel cooking line and exhaust hood in a commercial kitchen"></div>
+      <div class="gauge"><strong>Top to bottom</strong><span>Roof-top fan, ductwork, hood, filters and kitchen floor</span></div>
+    </div>
+    <div class="happy-copy rv">
+      <h2>Happiness guaranteed</h2>
+      <p class="lede">Our time-tested process of regularly scheduled maintenance will help your restaurant’s kitchen exhaust system defend against fire hazards.</p>
+      <p class="body">By keeping your cooking systems working at their best, they will more easily evacuate the smoke and grease out of the building and produce a cleaner, more efficient kitchen and a better working environment for your staff. You can rely on our cleaning and maintenance services for your commercial kitchen.</p>
+      <ul class="where">
+        <li>Restaurants</li><li>Hospitals</li><li>Cafeterias</li><li>Grocery stores</li><li>Large institutions</li>
+      </ul>
+      <a class="btn btn-ink" href="#process">Our cleaning process <svg><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services-head">
+      <h2>Our services</h2>
+      <p>Cleaning and maintenance for every part of your commercial kitchen exhaust system, plus pressure washing and so much more.</p>
+    </div>
+    <div class="svc-grid">
+      <ul class="svc-list" id="svcList">
+        <li class="on" data-img="0"><a href="https://www.albertahoodcleaning.ca/kitchen-exhaust-system-cleaning-degreasing/"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 3h10v4l4 5H3l4-5zM5 15h14M8 18h8"/></svg></span><h3>Kitchen exhaust system cleaning &amp; degreasing</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
+        <li data-img="1"><a href="https://www.albertahoodcleaning.ca/exhaust-fan-access-panel-installation/"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 4h16v16H4zM8 8h8v8H8z"/><circle cx="6" cy="6" r=".6" fill="currentColor"/><circle cx="18" cy="6" r=".6" fill="currentColor"/><circle cx="6" cy="18" r=".6" fill="currentColor"/><circle cx="18" cy="18" r=".6" fill="currentColor"/></svg></span><h3>Exhaust access panel installation</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
+        <li data-img="2"><a href="https://www.albertahoodcleaning.ca/exhaust-fan-hinges-installation/"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 20h16M6 20V9l6-5 6 5v11M10 12h4"/></svg></span><h3>Exhaust fan hinges installation</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
+        <li data-img="3"><a href="https://www.albertahoodcleaning.ca/roof-top-grease-containment/"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 16h18l-2 4H5zM12 3s-4 4.5-4 7.5a4 4 0 0 0 8 0C16 7.5 12 3 12 3z"/></svg></span><h3>Roof top grease containment</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
+        <li data-img="4"><a href="https://www.albertahoodcleaning.ca/commercial-pressure-washing/"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 14h10l2-2v-2H8L6 14M13 12h4M19 9l2-1M19 12h3M19 15l2 1"/></svg></span><h3>Commercial pressure washing</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
+        <li data-img="5"><a href="https://www.albertahoodcleaning.ca/exhaust-fan-belt-replacements/"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="7" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 6.5l10 3M7 17.5l10-3"/></svg></span><h3>Exhaust belt replacements</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
+        <li data-img="6"><a href="https://www.albertahoodcleaning.ca/commercial-kitchen-equipment-cleaning/"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 9h18v11H3zM3 13h18M7 6c0-1.5 1-1.5 1-3M12 6c0-1.5 1-1.5 1-3M17 6c0-1.5 1-1.5 1-3"/></svg></span><h3>Commercial kitchen equipment cleaning</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
+      </ul>
+      <div class="svc-stage">
+        <div class="svc-photo" id="svcPhoto">
+          <img class="on" src="images/kitchen-hood-line.jpg" alt="">
+          <img src="images/commercial-kitchen-hoods.jpg" alt="">
+          <img src="images/commercial-kitchen-hoods.jpg" alt="" style="object-position:20% 30%">
+          <img src="images/kitchen-hood-line.jpg" alt="" style="object-position:80% 20%">
+          <img src="images/commercial-kitchen-hoods.jpg" alt="" style="object-position:70% 80%">
+          <img src="images/kitchen-hood-line.jpg" alt="" style="object-position:30% 70%">
+          <img src="images/commercial-kitchen-hoods.jpg" alt="" style="object-position:50% 90%">
+          <span class="tag" id="svcTag">Hood cleaning</span>
+        </div>
+        <div class="svc-note">
+          <p>New to Alberta Hood Cleaning? First-time clients get 10% off.</p>
+          <a class="btn btn-sky" href="https://www.albertahoodcleaning.ca/contact-us/">Request quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="process-head rv">
+      <h2>Our cleaning process</h2>
+      <p>Our professional hood cleaning process begins on the roof-top where the fan unit is located and ends at the bottom on the kitchen floor. Scroll through all 19 steps and follow the job through your building.</p>
+    </div>
+    <div class="proc-grid">
+      <figure class="section-fig" id="fig" data-zone="hood" aria-label="Cross-section of a kitchen exhaust system from roof to floor">
+        <svg viewBox="0 0 360 600" role="img" aria-hidden="true">
+          <!-- sky -->
+          <rect x="0" y="0" width="360" height="132" fill="#eaf4fb"/>
+          <!-- roof zone -->
+          <g class="z-roof">
+            <rect class="z zfill" x="0" y="128" width="360" height="14" />
+            <rect x="150" y="96" width="80" height="34" fill="#fff" class="z zline" stroke-width="2"/>
+            <path d="M140 96h100l-10-14h-80z" fill="#fff" class="z zline" stroke-width="2"/>
+                        <circle cx="190" cy="62" r="26" fill="#fff" class="z zline" stroke-width="2"/>
+            <g class="fan-blades" style="transform-origin:190px 62px">
+              <path d="M190 62l0-20a8 8 0 0 1 6 12z M190 62l17 10a8 8 0 0 1-12 3z M190 62l-17 10a8 8 0 0 1 2-11z" class="z zfill"/>
+            </g>
+            <circle cx="190" cy="62" r="4" fill="#0a0e2e"/>
+            <rect x="252" y="114" width="70" height="14" class="z zfill"/>
+            <path d="M252 114h70" class="z zline" stroke-width="2"/>
+            <text x="287" y="106" text-anchor="middle" font-size="11" font-family="Archivo" fill="#525a6b">containment</text>
+          </g>
+          <!-- building walls -->
+          <path d="M14 142v436M346 142v436" stroke="#0a0e2e" stroke-width="3"/>
+          <!-- duct zone -->
+          <g class="z-duct">
+            <rect class="z zfill" x="172" y="142" width="36" height="190"/>
+            <path d="M172 142v190M208 142v190" class="z zline" stroke-width="2"/>
+            <g fill="#1d1b6b">
+              <circle class="flow-drop" cx="186" cy="150" r="3"/>
+              <circle class="flow-drop" cx="196" cy="150" r="2.5" style="animation-delay:.4s"/>
+              <circle class="flow-drop" cx="190" cy="150" r="3" style="animation-delay:.8s"/>
+              <circle class="flow-drop" cx="182" cy="150" r="2" style="animation-delay:1.2s"/>
+            </g>
+          </g>
+          <!-- hood zone -->
+          <g class="z-hood">
+            <path d="M110 332h160l40 48H70z" class="z zfill"/>
+            <path d="M110 332h160l40 48H70z" fill="none" class="z zline" stroke-width="2"/>
+            <rect x="70" y="380" width="240" height="10" fill="#0a0e2e"/>
+            <g stroke="#fff" stroke-width="3">
+              <path d="M110 344l-14 30M136 344l-10 30M162 344l-6 30M188 344l-2 30M214 344l2 30M240 344l6 30M266 344l10 30"/>
+            </g>
+          </g>
+          <g class="z-sign">
+            <g class="sign-badge">
+                            <circle cx="300" cy="300" r="20" class="z zfill"/>
+              <path d="M290 300l7 7 13-14" fill="none" stroke="#fff" stroke-width="3.5"/>
+            </g>
+          </g>
+          <!-- kitchen zone -->
+          <g class="z-kitchen">
+            <rect x="80" y="458" width="220" height="70" class="z zfill"/>
+            <rect x="80" y="458" width="220" height="70" fill="none" class="z zline" stroke-width="2"/>
+            <g fill="#0a0e2e"><rect x="98" y="450" width="40" height="8"/><rect x="152" y="450" width="40" height="8"/><rect x="206" y="450" width="40" height="8"/></g>
+            <path d="M80 492h220" stroke="#fff" stroke-width="2"/>
+            <rect x="14" y="560" width="332" height="18" class="z zfill"/>
+            <path d="M14 560h332" stroke="#0a0e2e" stroke-width="3"/>
+            <g stroke="#fff" stroke-width="1.5"><path d="M50 560v18M90 560v18M130 560v18M170 560v18M210 560v18M250 560v18M290 560v18M330 560v18"/></g>
+          </g>
+          <text x="30" y="122" font-family="Big Shoulders Display" font-weight="800" font-size="20" fill="#0a0e2e">ROOF</text>
+          <text x="226" y="240" font-family="Big Shoulders Display" font-weight="800" font-size="20" fill="#0a0e2e">DUCT</text>
+          <text x="30" y="324" font-family="Big Shoulders Display" font-weight="800" font-size="20" fill="#0a0e2e">HOOD</text>
+          <text x="30" y="552" font-family="Big Shoulders Display" font-weight="800" font-size="20" fill="#0a0e2e">KITCHEN FLOOR</text>
+        </svg>
+        <figcaption class="fig-legend"><span>Now working on</span><strong id="zoneName">Hood</strong></figcaption>
+      </figure>
+
+      <ol class="steps" id="steps">
+        <li data-zone="hood"><span class="n">1</span><p>Remove all filters from hood and soak.</p><span class="zl">Hood</span></li>
+        <li data-zone="kitchen"><span class="n">2</span><p>Cover cooking line equipment with heavy plastic protection.</p><span class="zl">Kitchen</span></li>
+        <li data-zone="hood"><span class="n">3</span><p>Funnel plastic into bucket.</p><span class="zl">Hood</span></li>
+        <li data-zone="roof"><span class="n">4</span><p>Partially remove and clean roof fan with chemical degreasers and high pressure hot water.</p><span class="zl">Roof</span></li>
+        <li data-zone="duct"><span class="n">5</span><p>Scrape and clean duct with chemical and high pressure hot water.</p><span class="zl">Duct</span></li>
+        <li data-zone="roof"><span class="n">6</span><p>Return roof fan, check belts and secure.</p><span class="zl">Roof</span></li>
+        <li data-zone="roof"><span class="n">7</span><p>Clean grease box, overflow and roof-top work area.</p><span class="zl">Roof</span></li>
+        <li data-zone="hood"><span class="n">8</span><p>Hood cleaning, plenum, filters and back splash with chemical and high pressure hot water.</p><span class="zl">Hood</span></li>
+        <li data-zone="hood"><span class="n">9</span><p>Collect and remove grease mixture from bucket.</p><span class="zl">Hood</span></li>
+        <li data-zone="hood"><span class="n">10</span><p>Remove funnel plastic.</p><span class="zl">Hood</span></li>
+        <li data-zone="hood"><span class="n">11</span><p>Return and install filters.</p><span class="zl">Hood</span></li>
+        <li data-zone="kitchen"><span class="n">12</span><p>Pressure wash kitchen floor work areas.</p><span class="zl">Kitchen</span></li>
+        <li data-zone="kitchen"><span class="n">13</span><p>Vacuum and mop excess on floor.</p><span class="zl">Kitchen</span></li>
+        <li data-zone="kitchen"><span class="n">14</span><p>Dry and apply polish to stainless steel areas.</p><span class="zl">Kitchen</span></li>
+        <li data-zone="kitchen"><span class="n">15</span><p>Completely clean work areas, equipment, counters and floors.</p><span class="zl">Kitchen</span></li>
+        <li data-zone="kitchen"><span class="n">16</span><p>Re-light the pilot light.</p><span class="zl">Kitchen</span></li>
+        <li data-zone="signoff"><span class="n">17</span><p>Review the status of the cleaning project checklist with the manager on duty.</p><span class="zl">Sign-off</span></li>
+        <li data-zone="signoff"><span class="n">18</span><p>Attach certification sticker to hood.</p><span class="zl">Sign-off</span></li>
+        <li data-zone="signoff"><span class="n">19</span><p>Before and after photos.</p><span class="zl">Sign-off</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Great people -->
+<section class="people">
+  <div class="wrap">
+    <div class="people-copy rv">
+      <h2>Great people, great results</h2>
+      <h3>5 reasons to keep your commercial kitchen exhaust system clean</h3>
+      <p>The exhaust system in a commercial kitchen is a vital component. Keeping it clean is a health and safety issue. Here are five reasons to keep your kitchen exhaust system clean and up to code.</p>
+      <a class="btn btn-sky" href="https://www.albertahoodcleaning.ca/the-5-most-common-problems-found-in-kitchen-exhaust-systems/">Learn more <svg><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="people-media"><img src="images/commercial-kitchen-hoods.jpg" alt="Row of clean exhaust hoods in a large commercial kitchen"></div>
+  </div>
+  <div class="vents" aria-hidden="true"></div>
+</section>
+
+<!-- Service area -->
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="area-copy rv">
+      <h2>Our service area</h2>
+      <p class="area-intro">Based in Edmonton and working in kitchens right across Alberta, from Grande Prairie to Medicine Hat.</p>
+      <ul class="towns" id="towns"></ul>
+    </div>
+    <div class="map rv">
+      <svg viewBox="-12 -12 320 580" id="mapSvg" aria-label="Map of Alberta showing service area towns">
+        <g class="grid"><line x1="0" y1="110" x2="294" y2="110"/><line x1="0" y1="220" x2="294" y2="220"/><line x1="0" y1="330" x2="294" y2="330"/><line x1="0" y1="440" x2="294" y2="440"/><line x1="98" y1="0" x2="98" y2="550"/><line x1="196" y1="0" x2="196" y2="550"/></g>
+        <polygon class="prov" points="0.0,0 294.0,0 294.0,550 174.6,550 155.8,505.0 141.1,470.0 123.5,450.0 102.9,420.0 79.4,390.0 52.9,360.0 38.2,340.0 17.6,320.0 0.0,305.0"/>
+        <g id="pts"></g>
+        <circle class="pulse" cx="191.4" cy="322.5" r="10"/>
+        <text class="hqlabel" x="214" y="300">Edmonton</text>
+        <text x="166" y="458" text-anchor="end">Calgary</text>
+        <text x="190" y="396" >Red Deer</text>
+        <text x="44" y="236">Grande Prairie</text>
+        <text x="246" y="152" text-anchor="middle">Wood Buffalo</text>
+        <text x="216" y="532">Lethbridge</text>
+        <text x="270" y="484" text-anchor="end">Medicine Hat</text>
+      </svg>
+      <div class="map-tip" id="mapTip"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-box rv">
+      <div class="cta-copy">
+        <h2>Book your hood cleaning</h2>
+        <p>Request a quote for your restaurant, hospital, cafeteria, grocery store or institution. New clients get 10% off.</p>
+        <div class="cta-actions">
+          <a class="btn btn-sky" href="https://www.albertahoodcleaning.ca/contact-us/">Request quote</a>
+          <a class="btn btn-line" href="https://www.albertahoodcleaning.ca/contact-us/">New client (10% off)</a>
+        </div>
+      </div>
+      <div class="cta-side">
+        <a class="cta-line" href="tel:+17807102273"><small>Call us, Mon to Sun, 9 am to 8 pm</small><strong>780-710-2273</strong></a>
+        <a class="cta-line" href="https://wa.me/17807104484" target="_blank" rel="noopener"><small>WhatsApp</small><strong>780-710-4484</strong></a>
+        <a class="cta-line mail" href="mailto:albertahoodcleaning@gmail.com"><small>Email</small><strong>albertahoodcleaning@gmail.com</strong></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <a class="foot-logo" href="#top"><img src="images/logo.png" alt="Alberta Hood Cleaning"></a>
+      <p>Kitchen exhaust cleaning, pressure washing and so much more, from the roof-top fan to the kitchen floor.</p>
+      <div class="foot-badges">
+        <span><img src="images/badge-nfpa.png" alt="NFPA member"></span>
+        <span><img src="images/badge-power-wash-academy.png" alt="Certified, Power Wash Academy"></span>
+        <span><img src="images/badge-licensed-insured.png" alt="Licensed and insured"></span>
+      </div>
+    </div>
+    <div>
+      <h4>About</h4>
+      <ul>
+        <li><a href="https://www.albertahoodcleaning.ca/about-us-2/">About us</a></li>
+        <li><a href="https://www.albertahoodcleaning.ca/our-company-believes/">Our company believes</a></li>
+        <li><a href="https://www.albertahoodcleaning.ca/frequently-asked-question/">Frequently asked questions</a></li>
+        <li><a href="https://www.albertahoodcleaning.ca/our-cleaning-process/">Our cleaning process</a></li>
+        <li><a href="https://www.albertahoodcleaning.ca/the-5-most-common-problems-found-in-kitchen-exhaust-systems/">Blog</a></li>
+        <li><a href="https://www.albertahoodcleaning.ca/contact-us/">Contact us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="https://www.albertahoodcleaning.ca/kitchen-exhaust-system-cleaning-degreasing/">Kitchen exhaust system cleaning &amp; degreasing</a></li>
+        <li><a href="https://www.albertahoodcleaning.ca/exhaust-fan-access-panel-installation/">Exhaust access panel installation</a></li>
+        <li><a href="https://www.albertahoodcleaning.ca/exhaust-fan-hinges-installation/">Exhaust fan hinges installation</a></li>
+        <li><a href="https://www.albertahoodcleaning.ca/roof-top-grease-containment/">Roof top grease containment</a></li>
+        <li><a href="https://www.albertahoodcleaning.ca/commercial-pressure-washing/">Commercial pressure washing</a></li>
+        <li><a href="https://www.albertahoodcleaning.ca/exhaust-fan-belt-replacements/">Exhaust belt replacements</a></li>
+        <li><a href="https://www.albertahoodcleaning.ca/commercial-kitchen-equipment-cleaning/">Commercial kitchen equipment cleaning</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact us</h4>
+      <ul class="foot-contact">
+        <li><svg><use href="#i-pin"/></svg><span>6406 180 Street NW<br>Edmonton, AB T5T 2J6</span></li>
+        <li><svg><use href="#i-phone"/></svg><a href="tel:+17807102273">780-710-2273</a></li>
+        <li><svg><use href="#i-mail"/></svg><a href="mailto:albertahoodcleaning@gmail.com">albertahoodcleaning@gmail.com</a></li>
+        <li><svg><use href="#i-clock"/></svg><span>Mon to Sun, 9 am to 8 pm</span></li>
+      </ul>
+      <div class="social" style="margin-top:16px">
+        <a href="https://www.facebook.com/Albertahoodcleaning-107316601708932/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+        <a href="https://www.instagram.com/p/CaIkBGrv1X5/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+        <a href="https://wa.me/17807104484" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="wrap">
+      <span>Copyright © <span id="yr">2026</span> All Rights Reserved, Alberta Hood Cleaning LTD</span>
+      <span>Design by <a href="https://cleaningdigital.ca/" target="_blank" rel="noopener">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="tel:+17807102273"><svg><use href="#i-phone"/></svg>Call now</a>
+  <a href="https://www.albertahoodcleaning.ca/contact-us/">Request quote</a>
+</div>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // mobile menu
+  var mb=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+  mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+
+  // reveal
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+    rv.forEach(function(el){io.observe(el)});
+  } else rv.forEach(function(el){el.classList.add('in')});
+
+  // services image swap
+  var tags=['Hood cleaning','Access panels','Fan hinges','Grease containment','Pressure washing','Belt replacements','Equipment cleaning'];
+  var items=document.querySelectorAll('#svcList li'),imgs=document.querySelectorAll('#svcPhoto img'),tag=document.getElementById('svcTag');
+  function setSvc(i){items.forEach(function(l,k){l.classList.toggle('on',k===i)});imgs.forEach(function(m,k){m.classList.toggle('on',k===i)});tag.textContent=tags[i]}
+  items.forEach(function(li,i){var a=li.querySelector('a');a.addEventListener('mouseenter',function(){setSvc(i)});a.addEventListener('focus',function(){setSvc(i)})});
+
+  // process scroll sync
+  var fig=document.getElementById('fig'),zn=document.getElementById('zoneName'),steps=document.querySelectorAll('#steps li');
+  var names={roof:'Roof',duct:'Duct',hood:'Hood',kitchen:'Kitchen',signoff:'Sign-off'};
+  function activate(li){steps.forEach(function(s){s.classList.toggle('on',s===li)});var z=li.getAttribute('data-zone');fig.setAttribute('data-zone',z);zn.textContent=names[z]}
+  activate(steps[0]);
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)activate(e.target)})},{rootMargin:'-48% 0px -48% 0px'});
+    steps.forEach(function(s){so.observe(s)});
+  } else steps.forEach(function(s){s.classList.add('on')});
+
+  // service area map
+  var towns={"Edmonton":[191.4,322.5],"Sherwood Park":[196.4,323],"St. Albert":[187.3,318.5],"Ardrossan":[201.4,322.5],"Beaumont":[193.5,332],"Devon":[184.3,332],"Fort Saskatchewan":[199.6,314.5],"Leduc":[189.6,337],"Morinville":[186.7,310],"Namao":[191.1,315],"Spruce Grove":[179,323],"Stony Plain":[176.4,323.5],"Airdrie":[176.1,435.5],"Blackfalds":[182.3,381],"Brooks":[238.1,472],"Calgary":[174.3,447.5],"Canmore":[136.4,445.5],"Chestermere":[181.7,447.5],"Grande Prairie":[35.6,241.5],"High River":[180.2,471],"Hinton":[71.1,330],"Lacombe":[184.3,376.5],"Lethbridge":[210.5,515.5],"Medicine Hat":[274,498],"Okotoks":[177,463.5],"Red Deer":[182,386.5],"Strathmore":[194,448],"Sylvan Lake":[173.5,384.5],"Wetaskiwin":[194.6,351.5],"Whitecourt":[127,293],"Wood Buffalo":[253.4,163.5],"Camrose":[210.8,349]};
+  var ns='http://www.w3.org/2000/svg',g=document.getElementById('pts'),ul=document.getElementById('towns'),tip=document.getElementById('mapTip'),svg=document.getElementById('mapSvg'),map=svg.parentNode;
+  var dots={};
+  Object.keys(towns).forEach(function(n){
+    var c=document.createElementNS(ns,'circle');c.setAttribute('cx',towns[n][0]);c.setAttribute('cy',towns[n][1]);c.setAttribute('r',n==='Edmonton'?7:4.5);c.setAttribute('class','pt'+(n==='Edmonton'?' hq':''));g.appendChild(c);dots[n]=c;
+    var li=document.createElement('li'),a=document.createElement('a');a.href='https://www.albertahoodcleaning.ca/contact-us/';a.textContent=n;li.appendChild(a);ul.appendChild(li);
+    function on(){a.classList.add('on');c.classList.add('on');c.setAttribute('r',8);var r=svg.getBoundingClientRect(),vb=svg.viewBox.baseVal,mr=map.getBoundingClientRect();tip.textContent=n;tip.style.left=(r.left-mr.left+(towns[n][0]-vb.x)*r.width/vb.width)+'px';tip.style.top=(r.top-mr.top+(towns[n][1]-vb.y)*r.height/vb.height)+'px';tip.style.opacity=1}
+    function off(){a.classList.remove('on');c.classList.remove('on');c.setAttribute('r',n==='Edmonton'?7:4.5);tip.style.opacity=0}
+    a.addEventListener('mouseenter',on);a.addEventListener('focus',on);a.addEventListener('mouseleave',off);a.addEventListener('blur',off);
+    c.addEventListener('mouseenter',on);c.addEventListener('mouseleave',off);
+  });
+})();
+</script>
+</body>
+</html>
