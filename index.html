@@ -11,255 +11,301 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0a0e2e;
-  --indigo:#1d1b6b;
-  --sky:#2b9ad6;
-  --spray:#4fd0f5;
-  --steel:#c7cdd5;
-  --steel-2:#e3e7ec;
-  --steel-dark:#6c7480;
-  --paper:#f2f4f7;
-  --white:#ffffff;
-  --text:#1b2033;
-  --muted:#525a6b;
+  --ink:#0a0e2e;--ink-2:#121845;--indigo:#1d1b6b;--sky:#2b9ad6;--spray:#4fd0f5;
+  --steel:#c7cdd5;--steel-2:#e3e7ec;--steel-dark:#6c7480;--paper:#f2f4f7;--white:#fff;
+  --text:#1b2033;--muted:#525a6b;
   --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
-  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
-  --wrap:1240px;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;--wrap:1260px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--body);color:var(--text);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:var(--body);color:var(--text);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit}
-h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;letter-spacing:.005em;margin:0;color:var(--ink)}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.92;margin:0;color:var(--ink)}
 p{margin:0}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
-:focus-visible{outline:3px solid var(--spray);outline-offset:3px;border-radius:4px}
-.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:16px;text-decoration:none;padding:15px 24px;border-radius:3px;border:2px solid transparent;transition:background .2s,color .2s,border-color .2s;cursor:pointer}
-.btn-sky{background:var(--sky);color:#fff}
-.btn-sky:hover{background:var(--indigo)}
-.btn-ink{background:var(--ink);color:#fff}
-.btn-ink:hover{background:var(--indigo)}
-.btn-line{border-color:var(--ink);color:var(--ink)}
-.btn-line:hover{background:var(--ink);color:#fff}
+:focus-visible{outline:3px solid var(--spray);outline-offset:3px}
+.sr{position:absolute;left:-9999px}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:16px;text-decoration:none;padding:16px 26px;border-radius:3px;border:2px solid transparent;transition:background .2s,color .2s,border-color .2s,transform .2s;cursor:pointer;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-2px)}
+.btn-sky{background:var(--sky);color:#fff}.btn-sky:hover{background:#1f86bf}
+.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:var(--indigo)}
+.btn-line{border-color:var(--ink);color:var(--ink)}.btn-line:hover{background:var(--ink);color:#fff}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}.btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
 .btn svg{width:18px;height:18px;flex:none}
+.btn-sky::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%,70%{left:-60%}100%{left:130%}}
 
-/* utility bar */
-.util{background:var(--ink);color:#cfd6e4;font-size:14px}
+/* utility + header */
+.util{background:#05081f;color:#cfd6e4;font-size:14px}
 .util .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:42px;flex-wrap:wrap}
-.util a{text-decoration:none;color:#cfd6e4}
-.util a:hover{color:#fff}
+.util a{text-decoration:none;color:#cfd6e4}.util a:hover{color:#fff}
 .util-left,.util-right{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
 .util .hours{display:flex;align-items:center;gap:8px}
-.util .dot{width:7px;height:7px;border-radius:50%;background:var(--spray);box-shadow:0 0 0 4px rgba(79,208,245,.2)}
+.util .dot{width:7px;height:7px;border-radius:50%;background:var(--spray);box-shadow:0 0 0 4px rgba(79,208,245,.2);animation:blink 2s infinite}
+@keyframes blink{50%{box-shadow:0 0 0 7px rgba(79,208,245,0)}}
 .social{display:flex;gap:6px}
-.social a{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.08)}
+.social a{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.08);transition:background .2s}
 .social a:hover{background:var(--sky)}
 .social svg{width:15px;height:15px;fill:currentColor}
-
-/* header */
-header.site{background:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid var(--steel-2)}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:104px}
-.brand img{height:88px;width:auto}
-nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:4px}
+header.site{background:rgba(255,255,255,.96);backdrop-filter:blur(10px);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--steel-2)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:100px}
+.brand img{height:86px;width:auto}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:2px}
 nav.main li{position:relative}
-nav.main > ul > li > a,nav.main > ul > li > button{font:600 16px var(--body);color:var(--ink);text-decoration:none;background:none;border:0;padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:6px;border-radius:3px}
-nav.main > ul > li > a:hover,nav.main > ul > li > button:hover{color:var(--sky)}
+nav.main > ul > li > a,nav.main > ul > li > button{font:600 16px var(--body);color:var(--ink);text-decoration:none;background:none;border:0;padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:6px;position:relative}
+nav.main > ul > li > a::after,nav.main > ul > li > button::after{content:"";position:absolute;left:14px;right:14px;bottom:6px;height:2px;background:var(--sky);transform:scaleX(0);transition:transform .25s;transform-origin:left}
+nav.main > ul > li > a:hover::after,nav.main > ul > li > button:hover::after{transform:scaleX(1)}
 nav.main button svg{width:11px;height:11px;transition:transform .2s}
-.drop{position:absolute;top:100%;left:0;min-width:300px;background:#fff;border:1px solid var(--steel-2);border-top:3px solid var(--sky);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .18s;box-shadow:0 18px 40px -18px rgba(10,14,46,.35)}
+.drop{position:absolute;top:100%;left:0;min-width:320px;background:#fff;border:1px solid var(--steel-2);border-top:3px solid var(--sky);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .2s;box-shadow:0 24px 50px -20px rgba(10,14,46,.4)}
 nav.main li:hover .drop,nav.main li:focus-within .drop{opacity:1;visibility:visible;transform:none}
 nav.main li:hover button svg{transform:rotate(180deg)}
-.drop a{display:block;padding:10px 12px;text-decoration:none;font-size:15px;color:var(--text);border-radius:2px}
-.drop a:hover{background:var(--paper);color:var(--indigo)}
-.head-cta{display:flex;align-items:center;gap:14px}
-.head-call{display:flex;flex-direction:column;text-decoration:none;line-height:1.15;text-align:right}
-.head-call small{font-size:13px;color:var(--muted)}
+.drop a{display:block;padding:10px 12px;text-decoration:none;font-size:15px;color:var(--text);transition:background .15s,padding .15s}
+.drop a:hover{background:var(--paper);color:var(--indigo);padding-left:18px}
+.head-cta{display:flex;align-items:center;gap:16px}
+.head-call{display:flex;align-items:center;gap:12px;text-decoration:none;line-height:1.15}
+.head-call .ring{width:46px;height:46px;border-radius:50%;background:var(--paper);display:grid;place-items:center;color:var(--sky);position:relative}
+.head-call .ring::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--sky);opacity:0;animation:ping 2.4s infinite}
+@keyframes ping{0%{transform:scale(.8);opacity:.8}100%{transform:scale(1.35);opacity:0}}
+.head-call .ring svg{width:20px;height:20px}
+.head-call small{font-size:13px;color:var(--muted);display:block}
 .head-call strong{font-family:var(--display);font-size:26px;font-weight:800;color:var(--indigo);letter-spacing:.02em}
 .menu-btn{display:none;background:var(--ink);color:#fff;border:0;width:46px;height:46px;border-radius:3px;cursor:pointer}
 .menu-btn svg{width:22px;height:22px}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:3px}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--indigo),var(--sky),var(--spray))}
 
 /* hero */
-.hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid var(--steel-2)}
-.hero::before{content:"";position:absolute;right:0;top:0;bottom:0;width:34%;background:var(--paper)}
-.hero .wrap{position:relative}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:end;padding-top:64px;padding-bottom:72px}
-.hero-copy{padding-bottom:28px}
-.hero-kicker{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:var(--indigo);font-size:16px;margin-bottom:22px}
-.hero-kicker svg{width:22px;height:22px;color:var(--sky)}
-.hero h1{font-size:clamp(54px,8.2vw,118px);text-transform:uppercase;font-weight:900;line-height:.86}
-.hero h1 .ln{display:block;overflow:hidden}
-.hero h1 .ln span{display:block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 30% 40%,#000 20%,transparent 75%);z-index:-1}
+.hero::after{content:"";position:absolute;width:900px;height:900px;right:-200px;top:-260px;background:radial-gradient(circle,rgba(43,154,214,.35),transparent 60%);z-index:-1;animation:breathe 8s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.12);opacity:.75}}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding-top:80px;padding-bottom:120px}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:#cfe9f8;font-size:15px;margin-bottom:26px;padding:8px 16px 8px 10px;border:1px solid rgba(255,255,255,.18);border-radius:40px;background:rgba(255,255,255,.04)}
+.hero-kicker svg{width:20px;height:20px;color:var(--spray)}
+.hero h1{font-size:clamp(60px,8.6vw,132px);text-transform:uppercase;font-weight:900;line-height:.84;color:#fff}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .ln span{display:block;animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
 .hero h1 .ln:nth-child(2) span{animation-delay:.12s}
-.hero h1 .ln:nth-child(3) span{animation-delay:.24s;color:var(--indigo)}
+.hero h1 .ln:nth-child(3) span{animation-delay:.24s;background:linear-gradient(90deg,var(--sky),var(--spray) 50%,#fff 60%,var(--spray) 70%,var(--sky));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:rise 1s .24s cubic-bezier(.2,.8,.2,1) both,sheen 6s 1.4s linear infinite}
 @keyframes rise{from{transform:translateY(105%)}to{transform:none}}
-.hero-lead{font-size:19px;color:var(--muted);max-width:540px;margin:28px 0 34px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.hero-visual{position:relative;height:600px}
-.hood-frame{position:absolute;inset:0 0 0 0;clip-path:polygon(16% 0,84% 0,100% 20%,100% 100%,0 100%,0 20%);background:var(--ink)}
-.hood-frame img{width:100%;height:100%;object-fit:cover;opacity:.92}
-.hood-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,46,0) 50%,rgba(10,14,46,.7))}
-.hood-trim{position:absolute;left:0;right:0;top:20%;height:10px;background:repeating-linear-gradient(90deg,var(--steel) 0 22px,var(--steel-dark) 22px 26px);z-index:2;opacity:.9}
-.hero-spray{position:absolute;left:-90px;top:30%;width:300px;z-index:3;pointer-events:none}
+@keyframes sheen{to{background-position:-300% 0}}
+.hero-lead{font-size:19px;color:#b9c3d8;max-width:540px;margin:30px 0 38px;animation:fadeUp .9s .5s both}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .9s .65s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.hero-trust{display:flex;align-items:center;gap:18px;margin-top:44px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);animation:fadeUp .9s .8s both}
+.hero-trust .b{background:#fff;border-radius:50%;width:64px;height:64px;display:grid;place-items:center;padding:8px;flex:none}
+.hero-trust .b img{max-height:48px;width:auto}
+.hero-trust p{font-size:14px;color:#9fabc4;line-height:1.45;max-width:220px}
+.hero-visual{position:relative;height:640px;animation:fadeUp 1.1s .3s both}
+.hood-frame{position:absolute;inset:0 30px 0 40px;clip-path:polygon(14% 0,86% 0,100% 17%,100% 100%,0 100%,0 17%);background:#000}
+.hood-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.08);animation:slowzoom 14s ease-in-out infinite alternate}
+@keyframes slowzoom{to{transform:scale(1)}}
+.hood-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,46,.1) 40%,rgba(10,14,46,.85))}
+.hood-outline{position:absolute;inset:-14px 16px -14px 26px;pointer-events:none}
+.hood-outline path{fill:none;stroke:var(--sky);stroke-width:1.5;stroke-dasharray:6 8;animation:dash 30s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-600}}
+.hero-spray{position:absolute;left:-40px;top:24%;width:300px;z-index:3;pointer-events:none}
 .drop-p{animation:spray 1.4s linear infinite;transform-box:fill-box}
 @keyframes spray{0%{opacity:0;transform:translate(0,0)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy))}}
-.sticker{position:absolute;right:-26px;top:120px;width:150px;height:150px;z-index:4;text-decoration:none}
-.sticker .ring{width:100%;height:100%;animation:spin 18s linear infinite}
-.sticker .core{position:absolute;inset:24px;border-radius:50%;background:var(--sky);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:900;line-height:.85;box-shadow:0 12px 30px -10px rgba(29,27,107,.6)}
+.sticker{position:absolute;right:-6px;top:90px;width:150px;height:150px;z-index:4;text-decoration:none}
+.sticker .ring2{width:100%;height:100%;animation:spin 18s linear infinite}
+.sticker .core{position:absolute;inset:24px;border-radius:50%;background:var(--sky);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:900;line-height:.85;box-shadow:0 0 0 6px rgba(43,154,214,.25),0 14px 34px -8px rgba(0,0,0,.6)}
 .sticker .core b{font-size:42px;display:block}
-.sticker .core i{font-style:normal;font-size:17px;letter-spacing:.03em}
+.sticker .core i{font-style:normal;font-size:17px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.hero-caption{position:absolute;left:24px;right:24px;bottom:22px;z-index:3;color:#fff;font-size:15px;display:flex;justify-content:space-between;gap:12px}
-.hero-caption strong{font-family:var(--display);font-size:24px;font-weight:800;display:block;letter-spacing:.02em}
+.float-card{position:absolute;z-index:4;background:rgba(255,255,255,.96);color:var(--ink);padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 24px 40px -18px rgba(0,0,0,.6);animation:bob 6s ease-in-out infinite}
+.float-card .ic{width:40px;height:40px;border-radius:50%;background:var(--paper);display:grid;place-items:center;color:var(--sky);flex:none}
+.float-card .ic svg{width:20px;height:20px}
+.float-card small{display:block;font-size:12.5px;color:var(--muted)}
+.float-card strong{font-family:var(--display);font-size:21px;font-weight:800;line-height:1.05;display:block}
+.fc-1{left:0;bottom:120px}
+.fc-2{right:0;bottom:36px;animation-delay:-3s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.hero-caption{position:absolute;left:72px;right:60px;bottom:200px;z-index:3;color:#fff}
 
-/* credentials */
-.creds{background:var(--paper);padding:56px 0 64px}
-.creds-inner{display:grid;grid-template-columns:auto 1fr;gap:0;background:#fff;border:1px solid var(--steel-2)}
-.badges{display:flex;align-items:center;gap:26px;padding:22px 32px;border-right:1px solid var(--steel-2)}
-.badges img{height:78px;width:auto}
-.badges img.nfpa{height:86px}
-.serve{display:flex;align-items:center;overflow:hidden;position:relative}
-.serve-label{flex:none;padding:0 26px;font-weight:600;color:var(--indigo);font-size:15px;line-height:1.3;max-width:170px}
-.marquee{flex:1;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.marquee-track{display:flex;gap:44px;width:max-content;animation:marq 26s linear infinite;padding:0 22px}
-.marquee-track span{font-family:var(--display);font-size:40px;font-weight:800;color:var(--ink);text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:44px}
-.marquee-track span::after{content:"";width:12px;height:12px;background:var(--sky);transform:rotate(45deg)}
+/* service band */
+.band{background:var(--sky);color:#fff;position:relative;z-index:2;margin-top:-58px;transform:skewY(-2deg);transform-origin:left}
+.band-in{transform:skewY(2deg);display:flex;align-items:center;padding:22px 0;overflow:hidden}
+.band-label{flex:none;padding:0 28px 0 max(28px,calc((100vw - var(--wrap))/2 + 28px));font-weight:600;font-size:15px;line-height:1.25;border-right:1px solid rgba(255,255,255,.35);margin-right:10px}
+.marquee{flex:1;overflow:hidden}
+.marquee-track{display:flex;width:max-content;animation:marq 30s linear infinite}
+.marquee-track span{font-family:var(--display);font-size:44px;font-weight:900;text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:40px;padding-right:40px}
+.marquee-track span svg{width:34px;height:34px;opacity:.8}
+.marquee-track span:nth-child(even){color:transparent;-webkit-text-stroke:1.5px #fff}
 @keyframes marq{to{transform:translateX(-50%)}}
 
 /* happiness */
-.happy{padding:40px 0 110px}
-.happy .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:center}
-.happy-media{position:relative}
-.happy-media .main{border-radius:3px;overflow:hidden;aspect-ratio:4/5}
-.happy-media .main img{width:100%;height:100%;object-fit:cover}
-.happy-media .gauge{position:absolute;right:-34px;bottom:44px;background:var(--ink);color:#fff;padding:20px 22px;width:220px;border-left:5px solid var(--spray)}
-.happy-media .gauge strong{font-family:var(--display);font-size:28px;font-weight:800;line-height:1;display:block;margin-bottom:6px}
-.happy-media .gauge span{font-size:14px;color:#bcc5d8;line-height:1.4;display:block}
-.happy h2{font-size:clamp(46px,6vw,84px);text-transform:uppercase;margin-bottom:26px}
-.happy .lede{font-size:21px;line-height:1.55;color:var(--ink);font-weight:500;margin-bottom:20px}
-.happy p+p{margin-top:16px}
+.happy{padding:150px 0 130px;position:relative}
+.happy .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:90px;align-items:center}
+.collage{position:relative;padding:0 70px 70px 0}
+.collage .main{position:relative;aspect-ratio:3/4;overflow:hidden}
+.collage .main img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.collage:hover .main img{transform:scale(1.05)}
+.collage .inset{position:absolute;right:0;bottom:0;width:52%;aspect-ratio:4/3;border:10px solid var(--paper);overflow:hidden;box-shadow:0 30px 50px -25px rgba(10,14,46,.5)}
+.collage .inset img{width:100%;height:100%;object-fit:cover}
+.collage .frame{position:absolute;left:-22px;top:-22px;width:60%;height:60%;border:2px solid var(--sky);z-index:-1}
+.collage .gauge{position:absolute;left:-30px;bottom:110px;background:var(--ink);color:#fff;padding:18px 22px;width:210px;border-left:5px solid var(--spray);z-index:2}
+.collage .gauge strong{font-family:var(--display);font-size:28px;font-weight:800;line-height:1;display:block;margin-bottom:6px}
+.collage .gauge span{font-size:13.5px;color:#bcc5d8;line-height:1.4;display:block}
+.happy h2{font-size:clamp(50px,6.2vw,92px);text-transform:uppercase;margin-bottom:28px}
+.happy h2 .outline{color:transparent;-webkit-text-stroke:2px var(--ink);display:block}
+.happy .lede{font-size:22px;line-height:1.5;color:var(--ink);font-weight:500;margin-bottom:20px;padding-left:20px;border-left:4px solid var(--sky)}
 .happy .body{color:var(--muted)}
-.where{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 34px;padding:0;list-style:none}
-.where li{border:1px solid var(--steel);padding:8px 14px;font-size:15px;font-weight:500;background:#fff}
+.where{display:grid;grid-template-columns:repeat(5,auto);gap:0;margin:34px 0 36px;padding:0;list-style:none;border:1px solid var(--steel)}
+.where li{padding:14px 12px;font-size:14px;font-weight:600;background:#fff;text-align:center;border-right:1px solid var(--steel);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--ink);transition:background .2s,color .2s}
+.where li:last-child{border-right:0}
+.where li svg{width:26px;height:26px;color:var(--sky);transition:color .2s}
+.where li:hover{background:var(--ink);color:#fff}
+.where li:hover svg{color:var(--spray)}
+.happy-actions{display:flex;gap:12px;flex-wrap:wrap}
 
-/* services */
-.services{background:var(--ink);color:#dfe5f0;padding:110px 0}
-.services-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.services h2{color:#fff;font-size:clamp(48px,6.4vw,92px);text-transform:uppercase}
-.services-head p{max-width:420px;color:#aeb8cc}
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.svc-list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.14)}
-.svc-list li{border-bottom:1px solid rgba(255,255,255,.14)}
-.svc-list a{display:grid;grid-template-columns:52px 1fr 34px;align-items:center;gap:16px;padding:22px 6px;text-decoration:none;color:#fff;transition:padding .25s,background .25s}
-.svc-list a .ic{width:44px;height:44px;border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;border-radius:50%;color:var(--spray);transition:background .25s,color .25s}
-.svc-list a .ic svg{width:22px;height:22px}
-.svc-list a h3{color:#fff;font-size:30px;font-weight:800;text-transform:uppercase;letter-spacing:.01em}
-.svc-list a .go{width:34px;height:34px;opacity:.35;transition:opacity .25s,transform .25s}
-.svc-list a:hover,.svc-list a:focus-visible,.svc-list li.on a{padding-left:16px;background:rgba(255,255,255,.04)}
-.svc-list li.on .ic{background:var(--sky);color:#fff;border-color:var(--sky)}
-.svc-list li.on .go{opacity:1;transform:translateX(4px)}
-.svc-stage{position:sticky;top:120px}
-.svc-photo{position:relative;aspect-ratio:4/3;overflow:hidden;background:#141a45}
-.svc-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .45s,transform .9s}
-.svc-photo img.on{opacity:1;transform:none}
-.svc-photo .tag{position:absolute;left:0;bottom:0;background:var(--sky);color:#fff;font-family:var(--display);font-weight:800;font-size:24px;padding:12px 20px;text-transform:uppercase;z-index:2}
-.svc-note{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:22px;padding:20px 22px;border:1px solid rgba(255,255,255,.14)}
-.svc-note p{color:#cfd6e4;font-size:16px}
+/* services bento */
+.services{background:var(--ink);color:#dfe5f0;padding:120px 0;position:relative;overflow:hidden}
+.services::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 2px,transparent 2px 80px)}
+.services .wrap{position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:54px}
+.services h2{color:#fff;font-size:clamp(52px,7vw,104px);text-transform:uppercase}
+.services h2 .outline{color:transparent;-webkit-text-stroke:2px var(--spray)}
+.sec-head p{max-width:420px;color:#aeb8cc}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:270px;gap:16px}
+.svc{position:relative;overflow:hidden;text-decoration:none;color:#fff;background:#141a45;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;isolation:isolate}
+.svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1s cubic-bezier(.2,.8,.2,1),filter .6s;filter:saturate(.85)}
+.svc::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,14,46,0) 30%,rgba(10,14,46,.92));transition:background .4s}
+.svc::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:0;background:var(--spray);transition:width .5s}
+.svc:hover img,.svc:focus-visible img{transform:scale(1.08);filter:saturate(1.1)}
+.svc:hover::before{background:linear-gradient(180deg,rgba(29,27,107,.15) 0,rgba(10,14,46,.95))}
+.svc:hover::after{width:100%}
+.svc .ic{position:absolute;top:20px;left:20px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);display:grid;place-items:center;color:#fff;border:1px solid rgba(255,255,255,.25);transition:background .3s}
+.svc:hover .ic{background:var(--sky);border-color:var(--sky)}
+.svc .ic svg{width:22px;height:22px}
+.svc h3{color:#fff;font-size:30px;text-transform:uppercase;line-height:.95}
+.svc .more{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--spray);margin-top:12px;max-height:0;opacity:0;overflow:hidden;transition:max-height .4s,opacity .4s}
+.svc:hover .more,.svc:focus-visible .more{max-height:30px;opacity:1}
+.svc .more svg{width:16px;height:16px}
+.svc.big{grid-column:span 2;grid-row:span 2;padding:36px}
+.svc.big h3{font-size:clamp(40px,4.4vw,60px)}
+.svc.big .more{max-height:30px;opacity:1}
+.svc.wide{grid-column:span 2}
+.svc-cta{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:16px;padding:26px 30px;background:linear-gradient(90deg,var(--indigo),var(--ink-2));border:1px solid rgba(255,255,255,.1)}
+.svc-cta p{font-family:var(--display);font-size:30px;font-weight:800;text-transform:uppercase;color:#fff;line-height:1}
+.svc-cta p span{color:var(--spray)}
 
 /* process */
-.process{padding:110px 0 120px;background:#fff}
-.process-head{max-width:760px;margin-bottom:60px}
-.process h2{font-size:clamp(48px,6.4vw,92px);text-transform:uppercase;margin-bottom:22px}
+.process{padding:130px 0;background:#fff;position:relative}
+.process-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:70px}
+.process h2{font-size:clamp(52px,7vw,104px);text-transform:uppercase}
 .process-head p{color:var(--muted);font-size:18px}
-.proc-grid{display:grid;grid-template-columns:440px 1fr;gap:80px;align-items:start}
-.section-fig{margin:0;position:sticky;top:116px;background:var(--paper);border:1px solid var(--steel-2);padding:22px}
-.section-fig svg{width:100%;height:auto;display:block}
-.fig-legend{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:14px;color:var(--muted)}
-.fig-legend strong{font-family:var(--display);font-size:24px;color:var(--indigo);font-weight:800;text-transform:uppercase}
-/* zones */
-.z{transition:fill .35s,stroke .35s,opacity .35s}
-.zfill{fill:#d5dae1}
-.zline{stroke:#8d95a1}
+.proc-grid{display:grid;grid-template-columns:500px 1fr;gap:80px;align-items:start}
+.proc-panel{position:sticky;top:124px;margin:0;height:calc(100vh - 160px);max-height:640px;min-height:480px;background:var(--ink);overflow:hidden}
+.proc-panel .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity .7s,transform 1.4s}
+.proc-panel .ph.on{opacity:1;transform:none}
+.proc-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,46,.55),rgba(10,14,46,0) 30%,rgba(10,14,46,.2) 60%,rgba(10,14,46,.9))}
+.proc-top{position:absolute;left:24px;right:24px;top:22px;z-index:2;display:flex;justify-content:space-between;align-items:center;color:#fff}
+.proc-top small{font-size:13px;color:#cfd6e4;display:block}
+.proc-top strong{font-family:var(--display);font-size:40px;font-weight:900;text-transform:uppercase;line-height:1;display:block}
+.proc-count{font-family:var(--display);font-weight:900;font-size:64px;line-height:1;color:var(--spray)}
+.proc-count span{font-size:22px;color:#cfd6e4}
+.mini{position:absolute;right:18px;bottom:18px;width:150px;z-index:2;background:rgba(242,244,247,.95);padding:10px;box-shadow:0 20px 40px -10px rgba(0,0,0,.6)}
+.mini svg{width:100%;height:auto;display:block}
+.proc-bar{position:absolute;left:24px;bottom:24px;right:190px;z-index:2;height:4px;background:rgba(255,255,255,.2)}
+.proc-bar i{display:block;height:100%;width:0;background:var(--spray);transition:width .4s}
+.z{transition:fill .35s,stroke .35s}
+.zfill{fill:#d5dae1}.zline{stroke:#8d95a1}
 [data-zone="roof"] .z-roof .zfill,[data-zone="duct"] .z-duct .zfill,[data-zone="hood"] .z-hood .zfill,[data-zone="kitchen"] .z-kitchen .zfill,[data-zone="signoff"] .z-sign .zfill{fill:var(--sky)}
 [data-zone="roof"] .z-roof .zline,[data-zone="duct"] .z-duct .zline,[data-zone="hood"] .z-hood .zline,[data-zone="kitchen"] .z-kitchen .zline{stroke:var(--indigo)}
-.fan-blades{transform-origin:190px 84px;transform-box:view-box}
+.fan-blades{transform-box:view-box}
 [data-zone="roof"] .fan-blades{animation:spin 1.2s linear infinite}
 .flow-drop{opacity:0}
 [data-zone="duct"] .flow-drop{animation:fall 1.6s linear infinite}
 @keyframes fall{0%{opacity:0;transform:translateY(-10px)}20%{opacity:1}100%{opacity:0;transform:translateY(190px)}}
-.sign-badge{opacity:.25;transition:opacity .35s,transform .35s;transform-origin:268px 372px;transform-box:view-box}
-[data-zone="signoff"] .sign-badge{opacity:1;transform:scale(1.15)}
-.steps{list-style:none;margin:0;padding:0;counter-reset:s}
-.steps li{display:grid;grid-template-columns:70px 1fr auto;gap:18px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--steel-2);transition:opacity .3s;opacity:.42}
+.sign-badge{opacity:.25;transition:opacity .35s}
+[data-zone="signoff"] .sign-badge{opacity:1}
+.steps{list-style:none;margin:0;padding:0;position:relative}
+.steps::before{content:"";position:absolute;left:34px;top:30px;bottom:30px;width:2px;background:var(--steel-2)}
+.steps li{display:grid;grid-template-columns:70px 1fr auto;gap:22px;align-items:center;padding:16px 0;transition:opacity .3s;opacity:.4;position:relative}
 .steps li.on{opacity:1}
-.steps li .n{font-family:var(--display);font-weight:900;font-size:44px;line-height:1;color:var(--steel)}
-.steps li.on .n{color:var(--sky)}
+.steps li .n{width:70px;height:70px;border-radius:50%;background:#fff;border:2px solid var(--steel-2);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:28px;color:var(--steel-dark);position:relative;z-index:1;transition:all .3s}
+.steps li.on .n{background:var(--sky);border-color:var(--sky);color:#fff;box-shadow:0 0 0 8px rgba(43,154,214,.15)}
 .steps li p{font-size:19px;color:var(--ink);font-weight:500;line-height:1.45}
-.steps li .zl{font-size:13px;font-weight:600;color:var(--indigo);border:1px solid var(--steel);padding:3px 10px;border-radius:20px;white-space:nowrap}
-.zone-break{padding:34px 0 8px;font-family:var(--display);font-weight:800;font-size:22px;color:var(--steel-dark);text-transform:uppercase;letter-spacing:.03em;border-bottom:2px solid var(--ink)}
+.steps li .zl{font-size:13px;font-weight:600;color:var(--indigo);border:1px solid var(--steel);padding:4px 12px;border-radius:20px;white-space:nowrap}
+.steps li.on .zl{background:var(--ink);color:#fff;border-color:var(--ink)}
 
 /* great people */
-.people{position:relative;background:var(--indigo);color:#fff;overflow:hidden}
-.people .wrap{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
-.people-copy{padding:96px 64px 96px 0;position:relative;z-index:2}
-.people h2{color:#fff;font-size:clamp(48px,6vw,88px);text-transform:uppercase;margin-bottom:28px}
-.people h3{color:var(--spray);font-family:var(--body);font-weight:600;font-size:22px;line-height:1.35;margin-bottom:14px;text-transform:none}
-.people p{color:#d3d9ec;font-size:18px;max-width:520px}
-.people .btn{margin-top:32px}
-.people-media{position:relative;margin-right:calc((100vw - min(100vw,var(--wrap)))/-2 - 28px)}
-.people-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.people-media::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--indigo),rgba(29,27,107,0) 40%);z-index:1}
-.vents{position:absolute;left:0;right:0;bottom:0;height:16px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.14) 0 30px,transparent 30px 38px);z-index:3}
+.people{position:relative;color:#fff;overflow:hidden;min-height:640px;display:flex;align-items:center;isolation:isolate}
+.people .bg{position:absolute;inset:-70px 0;z-index:-2}
+.people .bg img{width:100%;height:100%;object-fit:cover}
+.people::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,14,46,.96) 0,rgba(29,27,107,.82) 45%,rgba(10,14,46,.1) 80%)}
+.people .wrap{width:100%;padding-top:110px;padding-bottom:110px}
+.people-copy{max-width:600px}
+.people h2{color:#fff;font-size:clamp(52px,6.6vw,100px);text-transform:uppercase;margin-bottom:30px}
+.people h3{color:var(--spray);font-family:var(--body);font-weight:600;font-size:22px;line-height:1.35;margin-bottom:14px}
+.people p{color:#d3d9ec;font-size:18px}
+.people .btn{margin-top:34px}
+.vents{position:absolute;left:0;right:0;bottom:0;height:16px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.18) 0 30px,transparent 30px 38px)}
+
+/* reel */
+.reel{background:var(--ink);padding:16px 0;overflow:hidden}
+.reel-track{display:flex;gap:16px;width:max-content;animation:marq 60s linear infinite}
+.reel-track img{height:200px;width:auto;aspect-ratio:4/3;object-fit:cover;filter:grayscale(.4) brightness(.85);transition:filter .3s}
+.reel-track img:hover{filter:none}
+.reel:hover .reel-track{animation-play-state:paused}
 
 /* service area */
-.area{padding:110px 0}
-.area .wrap{display:grid;grid-template-columns:1fr 380px;gap:70px;align-items:center}
-.area h2{font-size:clamp(48px,6.4vw,92px);text-transform:uppercase;margin-bottom:20px}
+.area{padding:130px 0;position:relative;background:var(--paper)}
+.area::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--steel-2) 1px,transparent 1px),linear-gradient(90deg,var(--steel-2) 1px,transparent 1px);background-size:40px 40px;mask-image:linear-gradient(90deg,transparent,#000 60%)}
+.area .wrap{display:grid;grid-template-columns:1fr 400px;gap:80px;align-items:center;position:relative}
+.area h2{font-size:clamp(52px,7vw,104px);text-transform:uppercase;margin-bottom:20px}
 .area-intro{color:var(--muted);font-size:18px;max-width:560px;margin-bottom:34px}
 .towns{columns:3;column-gap:28px;list-style:none;padding:0;margin:0}
 .towns li{break-inside:avoid}
-.towns a{display:flex;align-items:center;gap:10px;padding:7px 0;text-decoration:none;font-weight:500;border-bottom:1px dashed var(--steel)}
+.towns a{display:flex;align-items:center;gap:10px;padding:7px 0;text-decoration:none;font-weight:500;border-bottom:1px dashed var(--steel);transition:color .2s,padding .2s}
 .towns a::before{content:"";width:8px;height:8px;border-radius:50%;border:2px solid var(--sky);flex:none;transition:background .2s}
-.towns a:hover,.towns a.on{color:var(--indigo)}
+.towns a:hover,.towns a.on{color:var(--indigo);padding-left:6px}
 .towns a:hover::before,.towns a.on::before{background:var(--sky)}
-.map{position:relative}
+.map{position:relative;background:#fff;padding:26px;box-shadow:0 40px 60px -40px rgba(10,14,46,.45)}
 .map svg{width:100%;height:auto;overflow:visible}
-.map .prov{fill:#fff;stroke:var(--ink);stroke-width:2}
+.map .prov{fill:#eef4fa;stroke:var(--ink);stroke-width:2}
 .map .grid line{stroke:var(--steel-2);stroke-width:1}
 .map .pt{fill:var(--sky);stroke:#fff;stroke-width:1.5;transition:r .2s,fill .2s}
 .map .pt.on{fill:var(--indigo)}
 .map .hq{fill:var(--indigo)}
 .map .pulse{fill:none;stroke:var(--sky);stroke-width:2;transform-origin:191.4px 322.5px;transform-box:view-box;animation:pulse 2.4s ease-out infinite}
 @keyframes pulse{from{transform:scale(.4);opacity:1}to{transform:scale(2.6);opacity:0}}
-.map text{font-family:var(--body);font-size:11.5px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:#f2f4f7;stroke-width:4px;stroke-linejoin:round}
+.map text{font-family:var(--body);font-size:11.5px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:#eef4fa;stroke-width:4px;stroke-linejoin:round}
 .map .hqlabel{font-family:var(--display);font-size:18px;font-weight:800;fill:var(--indigo)}
 .map-tip{position:absolute;left:0;top:0;background:var(--ink);color:#fff;font-size:13px;font-weight:600;padding:5px 9px;pointer-events:none;opacity:0;transform:translate(-50%,-140%);transition:opacity .15s;white-space:nowrap}
 
 /* cta */
-.cta{background:var(--paper);padding:0 0 110px}
-.cta-box{display:grid;grid-template-columns:1.2fr .8fr;background:var(--ink);color:#fff;position:relative;overflow:hidden}
-.cta-copy{padding:70px 64px}
-.cta h2{color:#fff;font-size:clamp(44px,5.6vw,80px);text-transform:uppercase;margin-bottom:20px}
-.cta p{color:#bfc8da;font-size:18px;max-width:520px;margin-bottom:32px}
+.cta{position:relative;color:#fff;isolation:isolate;overflow:hidden}
+.cta .bg{position:absolute;inset:0;z-index:-2}
+.cta .bg img{width:100%;height:100%;object-fit:cover}
+.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,14,46,.95),rgba(10,14,46,.8) 55%,rgba(43,154,214,.75))}
+.cta .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center;padding-top:110px;padding-bottom:110px}
+.cta h2{color:#fff;font-size:clamp(52px,6.6vw,100px);text-transform:uppercase;margin-bottom:22px}
+.cta h2 .outline{color:transparent;-webkit-text-stroke:2px #fff;display:block}
+.cta p{color:#c6cfe0;font-size:18px;max-width:520px;margin-bottom:34px}
 .cta-actions{display:flex;gap:12px;flex-wrap:wrap}
-.cta .btn-line{border-color:#fff;color:#fff}
-.cta .btn-line:hover{background:#fff;color:var(--ink)}
-.cta-side{background:var(--sky);padding:60px 48px;display:flex;flex-direction:column;justify-content:center;gap:24px;position:relative}
-.cta-side::before{content:"";position:absolute;left:-1px;top:0;bottom:0;width:40px;background:var(--ink);clip-path:polygon(0 0,100% 0,0 100%)}
-.cta-line{display:flex;flex-direction:column;text-decoration:none;color:#fff}
-.cta-line small{font-size:14px;opacity:.85}
-.cta-line strong{font-family:var(--display);font-size:38px;font-weight:800;line-height:1.05;letter-spacing:.02em}
-.cta-line.mail strong{font-family:var(--body);font-size:19px;font-weight:600;letter-spacing:0;word-break:break-all}
+.contact-card{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);padding:10px}
+.cta-line{display:flex;align-items:center;gap:16px;text-decoration:none;color:#fff;padding:20px;border-bottom:1px solid rgba(255,255,255,.14);transition:background .2s}
+.cta-line:last-child{border-bottom:0}
+.cta-line:hover{background:rgba(255,255,255,.08)}
+.cta-line .ci{width:50px;height:50px;border-radius:50%;background:var(--sky);display:grid;place-items:center;flex:none}
+.cta-line .ci svg{width:22px;height:22px;fill:currentColor}
+.cta-line small{font-size:13.5px;opacity:.8;display:block}
+.cta-line strong{font-family:var(--display);font-size:32px;font-weight:800;line-height:1.05;letter-spacing:.02em;display:block}
+.cta-line.mail strong{font-family:var(--body);font-size:17px;font-weight:600;letter-spacing:0;word-break:break-all}
 
 /* footer */
-footer{background:var(--ink);color:#b7c0d3;padding:80px 0 0;font-size:15px}
+footer{background:#05081f;color:#b7c0d3;padding:84px 0 0;font-size:15px}
 .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1.3fr 1fr;gap:48px;padding-bottom:56px}
 .foot-logo{background:#fff;display:inline-block;padding:14px 18px;border-radius:3px;margin-bottom:22px}
 .foot-logo img{height:84px;width:auto}
 footer h4{font-family:var(--display);font-weight:800;font-size:22px;color:#fff;text-transform:uppercase;letter-spacing:.03em;margin:0 0 18px}
 footer ul{list-style:none;margin:0;padding:0}
 footer li{margin-bottom:10px}
-footer a{text-decoration:none;color:#b7c0d3}
-footer a:hover{color:#fff}
+footer a{text-decoration:none;color:#b7c0d3}footer a:hover{color:#fff}
 .foot-contact li{display:flex;gap:10px;align-items:flex-start}
 .foot-contact svg{width:17px;height:17px;flex:none;margin-top:4px;color:var(--spray)}
 .foot-badges{display:flex;gap:12px;margin-top:20px;align-items:center}
@@ -269,65 +315,70 @@ footer a:hover{color:#fff}
 .foot-bottom .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .foot-bottom a{color:#fff;text-decoration:underline;text-underline-offset:3px}
 
-/* mobile bar */
 .mbar{display:none}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
 
 @media (max-width:1100px){
   nav.main,.head-call{display:none}
   .menu-btn{display:grid;place-items:center}
-  nav.main.open{display:block;position:absolute;top:104px;left:0;right:0;background:#fff;border-bottom:1px solid var(--steel-2);padding:12px 20px 20px}
+  nav.main.open{display:block;position:absolute;top:100px;left:0;right:0;background:#fff;border-bottom:1px solid var(--steel-2);padding:12px 20px 20px}
   nav.main.open ul{flex-direction:column}
   nav.main.open .drop{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 0 14px;min-width:0}
-  .hero .wrap,.happy .wrap,.svc-grid,.proc-grid,.people .wrap,.area .wrap,.cta-box{grid-template-columns:1fr}
-  .hero-visual{height:480px}
-  .hero-spray{left:-20px;width:220px}
-  .sticker{right:10px}
-  .creds-inner{grid-template-columns:1fr}
-  .badges{border-right:0;border-bottom:1px solid var(--steel-2);justify-content:center}
-  .serve{padding:18px 0}
-  .happy-media .gauge{right:12px}
-  .svc-stage{position:relative;top:0;order:-1}
-  .section-fig{margin:0;position:sticky;top:92px;z-index:5;padding:12px;max-width:none}
-  .section-fig svg{max-height:34vh}
-  .people-media{min-height:340px;margin:0 -28px}
-  .people-copy{padding:80px 0 60px}
-  .map{max-width:360px;margin:0 auto}
+  .hero .wrap,.happy .wrap,.proc-grid,.area .wrap,.cta .wrap,.process-head{grid-template-columns:1fr}
+  .hero-visual{height:540px}
+  .bento{grid-template-columns:1fr 1fr}
+  .svc.big{grid-column:span 2;grid-row:span 1}
+  .proc-panel{position:sticky;top:100px;z-index:5;height:300px;min-height:0}
+  .mini{width:96px;padding:6px}
+  .proc-bar{right:130px}
+  .map{max-width:400px;margin:0 auto}
   .foot-grid{grid-template-columns:1fr 1fr}
-  .cta-side::before{display:none}
-  .hero::before{display:none}
-  .svc-note{flex-wrap:wrap}
+  .where{grid-template-columns:repeat(3,1fr)}
+  .where li{border-bottom:1px solid var(--steel)}
 }
 @media (max-width:680px){
-  body{font-size:16px;padding-bottom:64px}
+  body{font-size:16px;padding-bottom:62px}
   .wrap{padding:0 20px}
   .util-left a.rev,.util .social{display:none}
-  header.site .wrap{height:78px}
-  .brand img{height:58px}
-  nav.main.open{top:78px}
+  header.site .wrap{height:80px}
+  .brand img{height:64px}
+  nav.main.open{top:80px}
   .head-cta .btn{display:none}
-  .hero .wrap{padding-top:40px;gap:30px}
-  .hero-visual{height:400px}
-  .sticker{width:118px;height:118px;top:70px}
-  .sticker .core{inset:19px}
-  .sticker .core b{font-size:32px}
-  .sticker .core i{font-size:14px}
-  .services-head{flex-direction:column;align-items:flex-start}
-  .svc-list a h3{font-size:24px}
-  .steps li{grid-template-columns:48px 1fr}
+  .hero .wrap{padding-top:44px;gap:40px;padding-bottom:110px}
+  .hero-visual{height:460px}
+  .hood-frame{inset:0 0 0 0}
+  .hood-outline{display:none}
+  .hero-spray{width:200px;left:-30px}
+  .sticker{width:112px;height:112px;top:40px;right:-6px}
+  .sticker .core{inset:18px}.sticker .core b{font-size:30px}.sticker .core i{font-size:14px}
+  .fc-1{left:-6px;bottom:100px}.fc-2{right:-6px;bottom:20px}
+  .float-card strong{font-size:18px}
+  .hero-trust{flex-wrap:wrap}
+  .band-label{display:none}
+  .marquee-track span{font-size:32px}
+  .collage{padding:0 30px 50px 0}
+  .collage .gauge{left:-8px;bottom:70px;width:180px}
+  .where{grid-template-columns:repeat(2,1fr)}
+  .sec-head{flex-direction:column;align-items:flex-start}
+  .bento{grid-template-columns:1fr;grid-auto-rows:240px}
+  .svc.big,.svc.wide{grid-column:auto}
+  .svc.big h3{font-size:32px}
+  .svc.big{padding:24px}
+  .svc .more{max-height:30px;opacity:1}
+  .svc-cta{flex-direction:column;align-items:flex-start}
+  .steps::before{left:24px}
+  .steps li{grid-template-columns:50px 1fr;gap:14px}
+  .steps li .n{width:50px;height:50px;font-size:22px}
   .steps li .zl{display:none}
-  .steps li .n{font-size:34px}
   .steps li p{font-size:17px}
+  .proc-panel{height:240px}
+  .proc-top strong{font-size:30px}.proc-count{font-size:44px}
   .towns{columns:2}
-  .cta-copy{padding:50px 26px}
-  .cta-side{padding:40px 26px}
+  .reel-track img{height:140px}
   .foot-grid{grid-template-columns:1fr}
-  .marquee-track span{font-size:30px}
   .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -6px 20px rgba(10,14,46,.2)}
-  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;height:60px;font-weight:600;text-decoration:none;color:#fff;background:var(--ink)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;height:62px;font-weight:600;text-decoration:none;color:#fff;background:var(--ink)}
   .mbar a+a{background:var(--sky)}
   .mbar svg{width:18px;height:18px}
 }
@@ -338,7 +389,6 @@ footer a:hover{color:#fff}
 </style>
 </head>
 <body>
-
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M4 12h15M13 6l6 6-6 6"/></symbol>
@@ -399,135 +449,104 @@ footer a:hover{color:#fff}
       </ul>
     </nav>
     <div class="head-cta">
-      <a class="head-call" href="tel:+17807102273"><small>Call us today</small><strong>780-710-2273</strong></a>
+      <a class="head-call" href="tel:+17807102273"><span class="ring"><svg><use href="#i-phone"/></svg></span><span><small>Call us today</small><strong>780-710-2273</strong></span></a>
       <a class="btn btn-sky" href="https://www.albertahoodcleaning.ca/contact-us/">Request quote</a>
       <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     </div>
   </div>
+  <div class="progress"><i id="prog"></i></div>
 </header>
 
 <main id="top">
 
-<!-- Hero -->
 <section class="hero">
   <div class="wrap">
     <div class="hero-copy">
-      <p class="hero-kicker"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 4.9-4.9 1.4 1.4z"/></svg>Happiness guaranteed, licensed and insured</p>
+      <p class="hero-kicker"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 4.9-4.9 1.4 1.4z"/></svg>Happiness guaranteed</p>
       <h1><span class="ln"><span>We go from</span></span><span class="ln"><span>top to</span></span><span class="ln"><span>bottom.</span></span></h1>
       <p class="hero-lead">Kitchen exhaust system cleaning that begins on the roof-top where the fan unit is located and ends on the kitchen floor. Fewer fire hazards, a cleaner kitchen and a better working environment for your staff.</p>
       <div class="hero-actions">
-        <a class="btn btn-ink" href="https://www.albertahoodcleaning.ca/contact-us/">Book now</a>
-        <a class="btn btn-line" href="tel:+17807102273"><svg><use href="#i-phone"/></svg>780-710-2273</a>
+        <a class="btn btn-sky" href="https://www.albertahoodcleaning.ca/contact-us/">Request quote</a>
+        <a class="btn btn-ghost" href="tel:+17807102273"><svg><use href="#i-phone"/></svg>780-710-2273</a>
+      </div>
+      <div class="hero-trust">
+        <span class="b"><img src="images/badge-nfpa.png" alt="NFPA member"></span>
+        <span class="b"><img src="images/badge-power-wash-academy.png" alt="Certified, Power Wash Academy"></span>
+        <span class="b"><img src="images/badge-licensed-insured.png" alt="Licensed and insured"></span>
+        <p>NFPA member, Power Wash Academy certified, licensed and insured.</p>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hood-frame"><img src="images/commercial-kitchen-hoods.jpg" alt="Clean stainless steel exhaust hoods above a commercial kitchen line"></div>
-      <div class="hood-trim" aria-hidden="true"></div>
+      <svg class="hood-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M14 0H86L100 17V100H0V17Z"/></svg>
+      <div class="hood-frame"><img src="images/hero-hood-pressure-wash.jpg" alt="Technician pressure washing the inside of a stainless steel kitchen exhaust hood with the cooking line covered in plastic"></div>
       <a class="sticker" href="https://www.albertahoodcleaning.ca/contact-us/" aria-label="New client, 10% off. Request a quote">
-        <svg class="ring" viewBox="0 0 150 150" aria-hidden="true"><defs><path id="circ" d="M75,75 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0"/></defs><circle cx="75" cy="75" r="74" fill="#fff"/><text font-family="Archivo,Arial" font-size="12.5" font-weight="700" fill="#1d1b6b" letter-spacing="1.5"><textPath href="#circ" textLength="384" lengthAdjust="spacing">NEW CLIENT · REQUEST QUOTE · NEW CLIENT · REQUEST QUOTE ·</textPath></text></svg>
+        <svg class="ring2" viewBox="0 0 150 150" aria-hidden="true"><defs><path id="circ" d="M75,75 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0"/></defs><circle cx="75" cy="75" r="74" fill="#fff"/><text font-family="Archivo,Arial" font-size="12.5" font-weight="700" fill="#1d1b6b" letter-spacing="1.5"><textPath href="#circ" textLength="384" lengthAdjust="spacing">NEW CLIENT · REQUEST QUOTE · NEW CLIENT · REQUEST QUOTE ·</textPath></text></svg>
         <span class="core"><span><b>10%</b><i>off</i></span></span>
       </a>
-      <svg class="hero-spray" viewBox="0 0 300 160" aria-hidden="true">
-        <g transform="rotate(-14 150 80)">
-          <rect x="10" y="78" width="150" height="7" rx="3" fill="#0a0e2e"/>
-          <rect x="60" y="74" width="40" height="15" rx="2" fill="#0a0e2e"/>
-          <rect x="160" y="75" width="12" height="13" rx="2" fill="#0a0e2e"/>
-          <g fill="#4fd0f5">
-            <circle class="drop-p" cx="176" cy="81" r="4" style="--dx:70px;--dy:-26px"/>
-            <circle class="drop-p" cx="176" cy="81" r="3" style="--dx:86px;--dy:-4px;animation-delay:.2s"/>
-            <circle class="drop-p" cx="176" cy="81" r="3.5" style="--dx:78px;--dy:20px;animation-delay:.45s"/>
-            <circle class="drop-p" cx="176" cy="81" r="2.5" style="--dx:100px;--dy:-14px;animation-delay:.7s"/>
-            <circle class="drop-p" cx="176" cy="81" r="3" style="--dx:96px;--dy:10px;animation-delay:.95s"/>
-            <circle class="drop-p" cx="176" cy="81" r="2" style="--dx:110px;--dy:-30px;animation-delay:1.15s"/>
-            <path class="drop-p" d="M176 81l30-8-2 6z" style="--dx:40px;--dy:-6px;animation-delay:.3s"/>
-          </g>
-        </g>
-      </svg>
-      <div class="hero-caption"><span><strong>Kitchen exhaust cleaning &amp; degreasing</strong>Edmonton and across Alberta</span></div>
+      <div class="float-card fc-1"><span class="ic"><svg><use href="#i-clock"/></svg></span><span><small>Open every day</small><strong>Mon to Sun, 9 am to 8 pm</strong></span></div>
+      <div class="float-card fc-2"><span class="ic"><svg><use href="#i-pin"/></svg></span><span><small>Based in Edmonton</small><strong>Serving all of Alberta</strong></span></div>
     </div>
   </div>
 </section>
 
-<!-- Credentials -->
-<section class="creds" aria-label="Credentials and who we serve">
-  <div class="wrap">
-    <div class="creds-inner">
-      <div class="badges">
-        <img class="nfpa" src="images/badge-nfpa.png" alt="NFPA member">
-        <img src="images/badge-power-wash-academy.png" alt="Certified, Power Wash Academy">
-        <img src="images/badge-licensed-insured.png" alt="Licensed and insured">
-      </div>
-      <div class="serve">
-        <p class="serve-label">We service</p>
-        <div class="marquee" aria-hidden="true">
-          <div class="marquee-track">
-            <span>Restaurants</span><span>Hospitals</span><span>Cafeterias</span><span>Grocery stores</span><span>Large institutions</span>
-            <span>Restaurants</span><span>Hospitals</span><span>Cafeterias</span><span>Grocery stores</span><span>Large institutions</span>
-          </div>
-        </div>
-        <p class="sr" style="position:absolute;left:-9999px">Restaurants, hospitals, cafeterias, grocery stores and large institutions.</p>
-      </div>
-    </div>
+<div class="band" aria-label="We service restaurants, hospitals, cafeterias, grocery stores and large institutions">
+  <div class="band-in">
+    <p class="band-label">We<br>service</p>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track">
+      <span>Restaurants<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span><span>Hospitals<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span><span>Cafeterias<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span><span>Grocery stores<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span><span>Large institutions<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span><span>Restaurants<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span><span>Hospitals<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span><span>Cafeterias<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span><span>Grocery stores<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span><span>Large institutions<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span>
+    </div></div>
   </div>
-</section>
+</div>
 
-<!-- Happiness guaranteed -->
 <section class="happy">
   <div class="wrap">
-    <div class="happy-media rv">
-      <div class="main"><img src="images/kitchen-hood-line.jpg" alt="Stainless steel cooking line and exhaust hood in a commercial kitchen"></div>
+    <div class="collage rv">
+      <span class="frame" aria-hidden="true"></span>
+      <div class="main"><img src="images/filter-degreasing.jpg" alt="Gloved hands lifting a greasy baffle filter out of an exhaust hood above a degreasing soak tank"></div>
+      <div class="inset"><img src="images/kitchen-hood-line.jpg" alt="Clean stainless steel cooking line and hood"></div>
       <div class="gauge"><strong>Top to bottom</strong><span>Roof-top fan, ductwork, hood, filters and kitchen floor</span></div>
     </div>
     <div class="happy-copy rv">
-      <h2>Happiness guaranteed</h2>
+      <h2>Happiness <span class="outline">guaranteed</span></h2>
       <p class="lede">Our time-tested process of regularly scheduled maintenance will help your restaurant’s kitchen exhaust system defend against fire hazards.</p>
       <p class="body">By keeping your cooking systems working at their best, they will more easily evacuate the smoke and grease out of the building and produce a cleaner, more efficient kitchen and a better working environment for your staff. You can rely on our cleaning and maintenance services for your commercial kitchen.</p>
       <ul class="where">
-        <li>Restaurants</li><li>Hospitals</li><li>Cafeterias</li><li>Grocery stores</li><li>Large institutions</li>
+        <li><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M7 2v9M5 2v5a2 2 0 0 0 4 0V2M7 11v11M17 22V2c-2 1-3 4-3 8h3"/></svg>Restaurants</li>
+        <li><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M4 21V5h16v16M9 21v-4h6v4M12 8v5M9.5 10.5h5"/></svg>Hospitals</li>
+        <li><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M3 16h18M5 16a7 7 0 0 1 14 0M12 9V7M2 20h20"/></svg>Cafeterias</li>
+        <li><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M2 4h3l2.5 11h11L21 7H6.2M9 20a1 1 0 1 0 0-.1M18 20a1 1 0 1 0 0-.1"/></svg>Grocery stores</li>
+        <li><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M3 21h18M4 10h16M12 3l9 5H3zM6 10v8M10 10v8M14 10v8M18 10v8"/></svg>Institutions</li>
       </ul>
-      <a class="btn btn-ink" href="#process">Our cleaning process <svg><use href="#i-arrow"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<!-- Services -->
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="services-head">
-      <h2>Our services</h2>
-      <p>Cleaning and maintenance for every part of your commercial kitchen exhaust system, plus pressure washing and so much more.</p>
-    </div>
-    <div class="svc-grid">
-      <ul class="svc-list" id="svcList">
-        <li class="on" data-img="0"><a href="https://www.albertahoodcleaning.ca/kitchen-exhaust-system-cleaning-degreasing/"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 3h10v4l4 5H3l4-5zM5 15h14M8 18h8"/></svg></span><h3>Kitchen exhaust system cleaning &amp; degreasing</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
-        <li data-img="1"><a href="https://www.albertahoodcleaning.ca/exhaust-fan-access-panel-installation/"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 4h16v16H4zM8 8h8v8H8z"/><circle cx="6" cy="6" r=".6" fill="currentColor"/><circle cx="18" cy="6" r=".6" fill="currentColor"/><circle cx="6" cy="18" r=".6" fill="currentColor"/><circle cx="18" cy="18" r=".6" fill="currentColor"/></svg></span><h3>Exhaust access panel installation</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
-        <li data-img="2"><a href="https://www.albertahoodcleaning.ca/exhaust-fan-hinges-installation/"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 20h16M6 20V9l6-5 6 5v11M10 12h4"/></svg></span><h3>Exhaust fan hinges installation</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
-        <li data-img="3"><a href="https://www.albertahoodcleaning.ca/roof-top-grease-containment/"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 16h18l-2 4H5zM12 3s-4 4.5-4 7.5a4 4 0 0 0 8 0C16 7.5 12 3 12 3z"/></svg></span><h3>Roof top grease containment</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
-        <li data-img="4"><a href="https://www.albertahoodcleaning.ca/commercial-pressure-washing/"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 14h10l2-2v-2H8L6 14M13 12h4M19 9l2-1M19 12h3M19 15l2 1"/></svg></span><h3>Commercial pressure washing</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
-        <li data-img="5"><a href="https://www.albertahoodcleaning.ca/exhaust-fan-belt-replacements/"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="7" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 6.5l10 3M7 17.5l10-3"/></svg></span><h3>Exhaust belt replacements</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
-        <li data-img="6"><a href="https://www.albertahoodcleaning.ca/commercial-kitchen-equipment-cleaning/"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 9h18v11H3zM3 13h18M7 6c0-1.5 1-1.5 1-3M12 6c0-1.5 1-1.5 1-3M17 6c0-1.5 1-1.5 1-3"/></svg></span><h3>Commercial kitchen equipment cleaning</h3><svg class="go"><use href="#i-arrow"/></svg></a></li>
-      </ul>
-      <div class="svc-stage">
-        <div class="svc-photo" id="svcPhoto">
-          <img class="on" src="images/kitchen-hood-line.jpg" alt="">
-          <img src="images/commercial-kitchen-hoods.jpg" alt="">
-          <img src="images/commercial-kitchen-hoods.jpg" alt="" style="object-position:20% 30%">
-          <img src="images/kitchen-hood-line.jpg" alt="" style="object-position:80% 20%">
-          <img src="images/commercial-kitchen-hoods.jpg" alt="" style="object-position:70% 80%">
-          <img src="images/kitchen-hood-line.jpg" alt="" style="object-position:30% 70%">
-          <img src="images/commercial-kitchen-hoods.jpg" alt="" style="object-position:50% 90%">
-          <span class="tag" id="svcTag">Hood cleaning</span>
-        </div>
-        <div class="svc-note">
-          <p>New to Alberta Hood Cleaning? First-time clients get 10% off.</p>
-          <a class="btn btn-sky" href="https://www.albertahoodcleaning.ca/contact-us/">Request quote</a>
-        </div>
+      <div class="happy-actions">
+        <a class="btn btn-ink" href="#process">Our cleaning process <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-line" href="https://www.albertahoodcleaning.ca/contact-us/">New client (10% off)</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Process -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Our <span class="outline">services</span></h2>
+      <p>Cleaning and maintenance for every part of your commercial kitchen exhaust system, plus pressure washing and so much more.</p>
+    </div>
+    <div class="bento rv">
+      <a class="svc big" href="https://www.albertahoodcleaning.ca/kitchen-exhaust-system-cleaning-degreasing/"><img src="images/hood-exhaust-cleaning.jpg" alt="Technician on a ladder wiping down a large stainless kitchen exhaust hood"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 3h10v4l4 5H3l4-5zM5 15h14M8 18h8"/></svg></span><h3>Kitchen exhaust system cleaning &amp; degreasing</h3><span class="more">View service <svg><use href="#i-arrow"/></svg></span></a>
+      <a class="svc" href="https://www.albertahoodcleaning.ca/exhaust-fan-access-panel-installation/"><img src="images/access-panel-installation.jpg" alt="Installing an access panel on kitchen exhaust ductwork with a cordless driver"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 4h16v16H4zM8 8h8v8H8z"/><circle cx="6" cy="6" r=".6" fill="currentColor"/><circle cx="18" cy="6" r=".6" fill="currentColor"/><circle cx="6" cy="18" r=".6" fill="currentColor"/><circle cx="18" cy="18" r=".6" fill="currentColor"/></svg></span><h3>Exhaust access panel installation</h3><span class="more">View service <svg><use href="#i-arrow"/></svg></span></a>
+      <a class="svc" href="https://www.albertahoodcleaning.ca/exhaust-fan-hinges-installation/"><img src="images/fan-hinges-installation.jpg" alt="Technician fitting a hinge kit to a roof-top exhaust fan"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 20h16M6 20V9l6-5 6 5v11M10 12h4"/></svg></span><h3>Exhaust fan hinges installation</h3><span class="more">View service <svg><use href="#i-arrow"/></svg></span></a>
+      <a class="svc wide" href="https://www.albertahoodcleaning.ca/roof-top-grease-containment/"><img src="images/rooftop-grease-containment.jpg" alt="Roof-top grease containment tray with absorbent pads around an exhaust fan"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 16h18l-2 4H5zM12 3s-4 4.5-4 7.5a4 4 0 0 0 8 0C16 7.5 12 3 12 3z"/></svg></span><h3>Roof top grease containment</h3><span class="more">View service <svg><use href="#i-arrow"/></svg></span></a>
+      <a class="svc wide" href="https://www.albertahoodcleaning.ca/commercial-pressure-washing/"><img src="images/commercial-pressure-washing.jpg" alt="Commercial pressure washing a restaurant back lot with a surface cleaner"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 14h10l2-2v-2H8L6 14M13 12h4M19 9l2-1M19 12h3M19 15l2 1"/></svg></span><h3>Commercial pressure washing</h3><span class="more">View service <svg><use href="#i-arrow"/></svg></span></a>
+      <a class="svc" href="https://www.albertahoodcleaning.ca/exhaust-fan-belt-replacements/"><img src="images/exhaust-belt-replacement.jpg" alt="Replacing the drive belt on an exhaust fan motor"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="7" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 6.5l10 3M7 17.5l10-3"/></svg></span><h3>Exhaust belt replacements</h3><span class="more">View service <svg><use href="#i-arrow"/></svg></span></a>
+      <a class="svc" href="https://www.albertahoodcleaning.ca/commercial-kitchen-equipment-cleaning/"><img src="images/kitchen-equipment-cleaning.jpg" alt="Technician deep cleaning a commercial range and fryer line"><span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 9h18v11H3zM3 13h18M7 6c0-1.5 1-1.5 1-3M12 6c0-1.5 1-1.5 1-3M17 6c0-1.5 1-1.5 1-3"/></svg></span><h3>Commercial kitchen equipment cleaning</h3><span class="more">View service <svg><use href="#i-arrow"/></svg></span></a>
+    </div>
+    <div class="svc-cta rv">
+      <p>New client? <span>Get 10% off.</span></p>
+      <a class="btn btn-sky" href="https://www.albertahoodcleaning.ca/contact-us/">Request quote</a>
+    </div>
+  </div>
+</section>
+
 <section class="process" id="process">
   <div class="wrap">
     <div class="process-head rv">
@@ -535,8 +554,14 @@ footer a:hover{color:#fff}
       <p>Our professional hood cleaning process begins on the roof-top where the fan unit is located and ends at the bottom on the kitchen floor. Scroll through all 19 steps and follow the job through your building.</p>
     </div>
     <div class="proc-grid">
-      <figure class="section-fig" id="fig" data-zone="hood" aria-label="Cross-section of a kitchen exhaust system from roof to floor">
-        <svg viewBox="0 0 360 600" role="img" aria-hidden="true">
+      <figure class="proc-panel" id="fig" data-zone="hood">
+        <img class="ph" data-z="roof" src="images/rooftop-fan-cleaning.jpg" alt="">
+        <img class="ph" data-z="duct" src="images/access-panel-installation.jpg" alt="">
+        <img class="ph on" data-z="hood" src="images/hero-hood-pressure-wash.jpg" alt="" style="object-position:50% 30%">
+        <img class="ph" data-z="kitchen" src="images/kitchen-equipment-cleaning.jpg" alt="">
+        <img class="ph" data-z="signoff" src="images/commercial-kitchen-hoods.jpg" alt="">
+        <div class="proc-top"><span><small>Now working on</small><strong id="zoneName">Hood</strong></span><span class="proc-count"><b id="stepNo">1</b><span>/19</span></span></div>
+        <div class="mini"><svg viewBox="0 0 360 600" role="img" aria-hidden="true">
           <!-- sky -->
           <rect x="0" y="0" width="360" height="132" fill="#eaf4fb"/>
           <!-- roof zone -->
@@ -596,9 +621,9 @@ footer a:hover{color:#fff}
           <text x="30" y="324" font-family="Big Shoulders Display" font-weight="800" font-size="20" fill="#0a0e2e">HOOD</text>
           <text x="30" y="552" font-family="Big Shoulders Display" font-weight="800" font-size="20" fill="#0a0e2e">KITCHEN FLOOR</text>
         </svg>
-        <figcaption class="fig-legend"><span>Now working on</span><strong id="zoneName">Hood</strong></figcaption>
+        </div>
+        <div class="proc-bar"><i id="procBar"></i></div>
       </figure>
-
       <ol class="steps" id="steps">
         <li data-zone="hood"><span class="n">1</span><p>Remove all filters from hood and soak.</p><span class="zl">Hood</span></li>
         <li data-zone="kitchen"><span class="n">2</span><p>Cover cooking line equipment with heavy plastic protection.</p><span class="zl">Kitchen</span></li>
@@ -624,8 +649,8 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<!-- Great people -->
 <section class="people">
+  <div class="bg" id="peopleBg"><img src="images/rooftop-fan-cleaning.jpg" alt=""></div>
   <div class="wrap">
     <div class="people-copy rv">
       <h2>Great people, great results</h2>
@@ -633,12 +658,12 @@ footer a:hover{color:#fff}
       <p>The exhaust system in a commercial kitchen is a vital component. Keeping it clean is a health and safety issue. Here are five reasons to keep your kitchen exhaust system clean and up to code.</p>
       <a class="btn btn-sky" href="https://www.albertahoodcleaning.ca/the-5-most-common-problems-found-in-kitchen-exhaust-systems/">Learn more <svg><use href="#i-arrow"/></svg></a>
     </div>
-    <div class="people-media"><img src="images/commercial-kitchen-hoods.jpg" alt="Row of clean exhaust hoods in a large commercial kitchen"></div>
   </div>
   <div class="vents" aria-hidden="true"></div>
 </section>
 
-<!-- Service area -->
+<div class="reel" aria-hidden="true"><div class="reel-track"><img src="images/hero-hood-pressure-wash.jpg" alt="" loading="lazy"><img src="images/rooftop-fan-cleaning.jpg" alt="" loading="lazy"><img src="images/filter-degreasing.jpg" alt="" loading="lazy"><img src="images/commercial-pressure-washing.jpg" alt="" loading="lazy"><img src="images/hood-exhaust-cleaning.jpg" alt="" loading="lazy"><img src="images/fan-hinges-installation.jpg" alt="" loading="lazy"><img src="images/kitchen-equipment-cleaning.jpg" alt="" loading="lazy"><img src="images/rooftop-grease-containment.jpg" alt="" loading="lazy"><img src="images/exhaust-belt-replacement.jpg" alt="" loading="lazy"><img src="images/access-panel-installation.jpg" alt="" loading="lazy"><img src="images/hero-hood-pressure-wash.jpg" alt="" loading="lazy"><img src="images/rooftop-fan-cleaning.jpg" alt="" loading="lazy"><img src="images/filter-degreasing.jpg" alt="" loading="lazy"><img src="images/commercial-pressure-washing.jpg" alt="" loading="lazy"><img src="images/hood-exhaust-cleaning.jpg" alt="" loading="lazy"><img src="images/fan-hinges-installation.jpg" alt="" loading="lazy"><img src="images/kitchen-equipment-cleaning.jpg" alt="" loading="lazy"><img src="images/rooftop-grease-containment.jpg" alt="" loading="lazy"><img src="images/exhaust-belt-replacement.jpg" alt="" loading="lazy"><img src="images/access-panel-installation.jpg" alt="" loading="lazy"></div></div>
+
 <section class="area" id="area">
   <div class="wrap">
     <div class="area-copy rv">
@@ -660,28 +685,27 @@ footer a:hover{color:#fff}
         <text x="216" y="532">Lethbridge</text>
         <text x="270" y="484" text-anchor="end">Medicine Hat</text>
       </svg>
+      
       <div class="map-tip" id="mapTip"></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
+  <div class="bg"><img src="images/kitchen-equipment-cleaning.jpg" alt=""></div>
   <div class="wrap">
-    <div class="cta-box rv">
-      <div class="cta-copy">
-        <h2>Book your hood cleaning</h2>
-        <p>Request a quote for your restaurant, hospital, cafeteria, grocery store or institution. New clients get 10% off.</p>
-        <div class="cta-actions">
-          <a class="btn btn-sky" href="https://www.albertahoodcleaning.ca/contact-us/">Request quote</a>
-          <a class="btn btn-line" href="https://www.albertahoodcleaning.ca/contact-us/">New client (10% off)</a>
-        </div>
+    <div class="rv">
+      <h2>Book your <span class="outline">hood cleaning</span></h2>
+      <p>Request a quote for your restaurant, hospital, cafeteria, grocery store or institution. New clients get 10% off.</p>
+      <div class="cta-actions">
+        <a class="btn btn-sky" href="https://www.albertahoodcleaning.ca/contact-us/">Request quote</a>
+        <a class="btn btn-ghost" href="https://www.albertahoodcleaning.ca/contact-us/">Book now</a>
       </div>
-      <div class="cta-side">
-        <a class="cta-line" href="tel:+17807102273"><small>Call us, Mon to Sun, 9 am to 8 pm</small><strong>780-710-2273</strong></a>
-        <a class="cta-line" href="https://wa.me/17807104484" target="_blank" rel="noopener"><small>WhatsApp</small><strong>780-710-4484</strong></a>
-        <a class="cta-line mail" href="mailto:albertahoodcleaning@gmail.com"><small>Email</small><strong>albertahoodcleaning@gmail.com</strong></a>
-      </div>
+    </div>
+    <div class="contact-card rv">
+      <a class="cta-line" href="tel:+17807102273"><span class="ci"><svg><use href="#i-phone"/></svg></span><span><small>Call us, Mon to Sun, 9 am to 8 pm</small><strong>780-710-2273</strong></span></a>
+      <a class="cta-line" href="https://wa.me/17807104484" target="_blank" rel="noopener"><span class="ci"><svg><use href="#i-wa"/></svg></span><span><small>WhatsApp</small><strong>780-710-4484</strong></span></a>
+      <a class="cta-line mail" href="mailto:albertahoodcleaning@gmail.com"><span class="ci"><svg><use href="#i-mail"/></svg></span><span><small>Email</small><strong>albertahoodcleaning@gmail.com</strong></span></a>
     </div>
   </div>
 </section>
@@ -753,43 +777,40 @@ footer a:hover{color:#fff}
 <script>
 (function(){
   document.getElementById('yr').textContent=new Date().getFullYear();
-
-  // mobile menu
   var mb=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
   mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
-
-  // reveal
   var rv=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
     rv.forEach(function(el){io.observe(el)});
   } else rv.forEach(function(el){el.classList.add('in')});
 
-  // services image swap
-  var tags=['Hood cleaning','Access panels','Fan hinges','Grease containment','Pressure washing','Belt replacements','Equipment cleaning'];
-  var items=document.querySelectorAll('#svcList li'),imgs=document.querySelectorAll('#svcPhoto img'),tag=document.getElementById('svcTag');
-  function setSvc(i){items.forEach(function(l,k){l.classList.toggle('on',k===i)});imgs.forEach(function(m,k){m.classList.toggle('on',k===i)});tag.textContent=tags[i]}
-  items.forEach(function(li,i){var a=li.querySelector('a');a.addEventListener('mouseenter',function(){setSvc(i)});a.addEventListener('focus',function(){setSvc(i)})});
+  // scroll progress + parallax
+  var prog=document.getElementById('prog'),pbg=document.getElementById('peopleBg'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function onScroll(){
+    var h=document.documentElement,max=h.scrollHeight-h.clientHeight;prog.style.width=(h.scrollTop/max*100)+'%';
+    if(!reduce&&pbg){var r=pbg.parentNode.getBoundingClientRect();var p=(r.top+r.height/2-innerHeight/2)/innerHeight;pbg.style.transform='translateY('+Math.max(-60,Math.min(60,p*-60))+'px)'}
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-  // process scroll sync
-  var fig=document.getElementById('fig'),zn=document.getElementById('zoneName'),steps=document.querySelectorAll('#steps li');
+  // process
+  var fig=document.getElementById('fig'),zn=document.getElementById('zoneName'),sn=document.getElementById('stepNo'),bar=document.getElementById('procBar'),steps=document.querySelectorAll('#steps li'),phs=fig.querySelectorAll('.ph');
   var names={roof:'Roof',duct:'Duct',hood:'Hood',kitchen:'Kitchen',signoff:'Sign-off'};
-  function activate(li){steps.forEach(function(s){s.classList.toggle('on',s===li)});var z=li.getAttribute('data-zone');fig.setAttribute('data-zone',z);zn.textContent=names[z]}
+  function activate(li){var idx=[].indexOf.call(steps,li);steps.forEach(function(s){s.classList.toggle('on',s===li)});var z=li.getAttribute('data-zone');fig.setAttribute('data-zone',z);zn.textContent=names[z];sn.textContent=idx+1;bar.style.width=((idx+1)/steps.length*100)+'%';phs.forEach(function(p){p.classList.toggle('on',p.getAttribute('data-z')===z)})}
   activate(steps[0]);
   if('IntersectionObserver' in window){
     var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)activate(e.target)})},{rootMargin:'-48% 0px -48% 0px'});
     steps.forEach(function(s){so.observe(s)});
-  } else steps.forEach(function(s){s.classList.add('on')});
+  }
 
-  // service area map
+  // map
   var towns={"Edmonton":[191.4,322.5],"Sherwood Park":[196.4,323],"St. Albert":[187.3,318.5],"Ardrossan":[201.4,322.5],"Beaumont":[193.5,332],"Devon":[184.3,332],"Fort Saskatchewan":[199.6,314.5],"Leduc":[189.6,337],"Morinville":[186.7,310],"Namao":[191.1,315],"Spruce Grove":[179,323],"Stony Plain":[176.4,323.5],"Airdrie":[176.1,435.5],"Blackfalds":[182.3,381],"Brooks":[238.1,472],"Calgary":[174.3,447.5],"Canmore":[136.4,445.5],"Chestermere":[181.7,447.5],"Grande Prairie":[35.6,241.5],"High River":[180.2,471],"Hinton":[71.1,330],"Lacombe":[184.3,376.5],"Lethbridge":[210.5,515.5],"Medicine Hat":[274,498],"Okotoks":[177,463.5],"Red Deer":[182,386.5],"Strathmore":[194,448],"Sylvan Lake":[173.5,384.5],"Wetaskiwin":[194.6,351.5],"Whitecourt":[127,293],"Wood Buffalo":[253.4,163.5],"Camrose":[210.8,349]};
   var ns='http://www.w3.org/2000/svg',g=document.getElementById('pts'),ul=document.getElementById('towns'),tip=document.getElementById('mapTip'),svg=document.getElementById('mapSvg'),map=svg.parentNode;
-  var dots={};
   Object.keys(towns).forEach(function(n){
-    var c=document.createElementNS(ns,'circle');c.setAttribute('cx',towns[n][0]);c.setAttribute('cy',towns[n][1]);c.setAttribute('r',n==='Edmonton'?7:4.5);c.setAttribute('class','pt'+(n==='Edmonton'?' hq':''));g.appendChild(c);dots[n]=c;
+    var c=document.createElementNS(ns,'circle'),R=n==='Edmonton'?7:4.5;c.setAttribute('cx',towns[n][0]);c.setAttribute('cy',towns[n][1]);c.setAttribute('r',R);c.setAttribute('class','pt'+(n==='Edmonton'?' hq':''));g.appendChild(c);
     var li=document.createElement('li'),a=document.createElement('a');a.href='https://www.albertahoodcleaning.ca/contact-us/';a.textContent=n;li.appendChild(a);ul.appendChild(li);
     function on(){a.classList.add('on');c.classList.add('on');c.setAttribute('r',8);var r=svg.getBoundingClientRect(),vb=svg.viewBox.baseVal,mr=map.getBoundingClientRect();tip.textContent=n;tip.style.left=(r.left-mr.left+(towns[n][0]-vb.x)*r.width/vb.width)+'px';tip.style.top=(r.top-mr.top+(towns[n][1]-vb.y)*r.height/vb.height)+'px';tip.style.opacity=1}
-    function off(){a.classList.remove('on');c.classList.remove('on');c.setAttribute('r',n==='Edmonton'?7:4.5);tip.style.opacity=0}
+    function off(){a.classList.remove('on');c.classList.remove('on');c.setAttribute('r',R);tip.style.opacity=0}
     a.addEventListener('mouseenter',on);a.addEventListener('focus',on);a.addEventListener('mouseleave',off);a.addEventListener('blur',off);
     c.addEventListener('mouseenter',on);c.addEventListener('mouseleave',off);
   });
